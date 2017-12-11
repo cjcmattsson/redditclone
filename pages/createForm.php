@@ -12,12 +12,12 @@ require __DIR__.'../../views/header.php';
     <form action="../app/auth/create.php" method="post">
         <div class="form-group">
             <label for="email">Name</label>
-            <input class="form-control" type="text" name="first-name" placeholder="Kurt Wallander" required>
+            <input class="form-control" type="text" name="name" placeholder="Kurt Wallander" required>
         </div><!-- /form-group -->
 
         <div class="form-group">
             <label for="email">Userame</label>
-            <input class="form-control" type="text" name="first-name" placeholder="Coolkid92" required>
+            <input class="form-control" type="text" name="username" placeholder="Coolkid92" required>
         </div><!-- /form-group -->
 
         <div class="form-group">
@@ -27,9 +27,8 @@ require __DIR__.'../../views/header.php';
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" placeholder="**********" required>
-            <label for="password">Repeat Password</label>
-            <input class="form-control" type="password" name="password" placeholder="**********" required>
+            <input class="form-control password" type="password" name="password" placeholder="**********" required>
+            <input class="togglePassword" type="checkbox"> Show Password
         </div><!-- /form-group -->
 
         <button type="submit" class="btn btn-primary">Create Account</button>
