@@ -11,11 +11,13 @@ require __DIR__.'../../views/header.php';
 
     <form action="../app/auth/create.php" method="post">
         <div class="form-group">
-            <label for="email">First Name</label>
-            <input class="form-control" type="text" name="first-name" placeholder="Kurt" required>
-            <label for="email">Last Name</label>
-            <input class="form-control" type="text" name="last-name" placeholder="Wallander" required>
+            <label for="email">Name</label>
+            <input class="form-control" type="text" name="first-name" placeholder="Kurt Wallander" required>
+        </div><!-- /form-group -->
 
+        <div class="form-group">
+            <label for="email">Userame</label>
+            <input class="form-control" type="text" name="first-name" placeholder="Coolkid92" required>
         </div><!-- /form-group -->
 
         <div class="form-group">
