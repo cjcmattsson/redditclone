@@ -9,6 +9,7 @@ if (isset($_POST['name'], $_POST['username'], $_POST['email'], $_POST['password'
   $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
   $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
   $password = filter_var($_POST['password']);
+  $email = filter_var($_POST['biography'], FILTER_SANITIZE_STRING);
 
   $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
