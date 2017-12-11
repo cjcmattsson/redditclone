@@ -1,8 +1,11 @@
 <?php
 
 declare(strict_types=1);
-
 require __DIR__.'../../views/header.php';
+if (isset($_SESSION['user'])) {
+  redirect('/');
+};
+
 
 ?>
 
@@ -11,8 +14,8 @@ require __DIR__.'../../views/header.php';
 
     <form action="../app/auth/login.php" method="post">
         <div class="form-group">
-            <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" placeholder="kurt@wallander.com" required>
+            <label for="email">Username</label>
+            <input class="form-control" type="text" name="username" placeholder="kurt@wallander.com" required>
             <small class="form-text text-muted">Enter your email address</small>
         </div><!-- /form-group -->
 
