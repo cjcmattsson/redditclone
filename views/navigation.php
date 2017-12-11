@@ -7,7 +7,11 @@
       </li><!-- /nav-item -->
 
       <li class="nav-item">
-          <a class="nav-link" href="/about.php">About</a>
+          <a class="nav-link" href="/pages/about.php">About</a>
+      </li><!-- /nav-item -->
+
+      <li class="nav-item">
+          <a class="nav-link" href="/app/auth/login.php">Login</a>
       </li><!-- /nav-item -->
   </ul><!-- /navbar-nav -->
 </nav><!-- /navbar -->
