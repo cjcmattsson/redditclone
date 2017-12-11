@@ -9,12 +9,12 @@ if (isset($_POST['name'], $_POST['username'], $_POST['email'], $_POST['password'
   $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
   $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
   $password = filter_var($_POST['password']);
-  $email = filter_var($_POST['biography'], FILTER_SANITIZE_STRING);
+  $biography = filter_var($_POST['biography'], FILTER_SANITIZE_STRING);
 
   $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-  $query = 'INSERT INTO users (name, username, email, password)
-            VALUES (:name, :username, :email, :password)';
+  $query = 'INSERT INTO users (name, username, email, password, biography)
+            VALUES (:name, :username, :email, :password, :biography)';
 
   $statement = $pdo->prepare($query);
 
@@ -24,6 +24,7 @@ if (isset($_POST['name'], $_POST['username'], $_POST['email'], $_POST['password'
 
   $statement->bindParam(':name', $name, PDO::PARAM_STR);
   $statement->bindParam(':username', $username, PDO::PARAM_STR);
+  $statement->bindParam(':biography', $biography, PDO::PARAM_STR);
   $statement->bindParam(':email', $email, PDO::PARAM_STR);
   $statement->bindParam(':password', $hashed_password, PDO::PARAM_STR);
 
