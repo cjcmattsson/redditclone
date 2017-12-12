@@ -27,7 +27,7 @@ if (isset($_POST['username'], $_POST['password'])) {
         // Remember to not save the password in the session!
         unset($user['password']);
         $_SESSION['user'] = $user;
-        redirect('../../pages/about.php');
+        redirect('../../pages/profile.php');
     } else {
       redirect('../../pages/loginForm.php');
     }
