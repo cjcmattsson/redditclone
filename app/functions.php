@@ -31,3 +31,15 @@ function userInfo($pdo) {
 
   return $resultQuery;
 }
+
+// FUNCTION TO PRINT OUT POSTS
+function postsShow($pdo) {
+  $query = "SELECT * FROM posts LEFT JOIN users ON posts.user_id=users.id ORDER BY post_id DESC";
+
+  $statement = $pdo->prepare($query);
+  $statement->execute();
+
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  return $resultQuery;
+}

@@ -10,9 +10,11 @@ if (isset($_POST['title'], $_POST['description'], $_POST['url'])) {
   $url = filter_var($_POST['url'], FILTER_SANITIZE_STRING);
 
   $id = (int)$_SESSION['user']['id'];
+  $posttime = date("M d, Y: H:i");
 
-  $query = 'INSERT INTO posts (user_id, title, description, url)
-            VALUES (:id, :title, :description, :url)';
+
+  $query = 'INSERT INTO posts (user_id, title, description, url, posttime)
+            VALUES (:id, :title, :description, :url, :posttime)';
 
   $statement = $pdo->prepare($query);
 
@@ -24,6 +26,7 @@ if (isset($_POST['title'], $_POST['description'], $_POST['url'])) {
   $statement->bindParam(':description', $description, PDO::PARAM_STR);
   $statement->bindParam(':url', $url, PDO::PARAM_STR);
   $statement->bindParam(':id', $id, PDO::PARAM_INT);
+  $statement->bindParam(':posttime', $posttime, PDO::PARAM_STR);
 
   $statement->execute();
 

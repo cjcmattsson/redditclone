@@ -1,4 +1,27 @@
-<?php require __DIR__.'/../views/header.php'; ?>
+<?php require __DIR__.'/../views/header.php';?>
+
+<div class="row">
+  <div class="col-md-6">
+  <article>
+    <!-- If user hasent chosen an img, a standard image will show -->
+
+    <?php $posts = postsShow($pdo)?>
+    <?php foreach ($posts as $post): ?>
+      <!-- the actual blog post: title/author/date/content -->
+      <h2><a href=""><?php echo $post['title'];?></a></h2>
+      <p><i class="fa fa-user"></i> by <a href=""><?php echo $post['username'] ?></a>
+      </p>
+      <hr>
+      <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
+      <p><i class="fa fa-user"></i> Check it out: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
+
+      <p><i class="fa fa-calendar"></i> Posted on <?php echo $post['posttime'];?></p>
+      <hr>
+      <br>
+    <?php endforeach; ?>
+  </article>
+  </div>
+  </div>
 
 <?php if (isset($_SESSION['user'])): ?>
   <div class="col-sm-8 p-0 pt-4">
