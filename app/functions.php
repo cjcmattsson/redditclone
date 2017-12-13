@@ -29,6 +29,10 @@ function userInfo($pdo) {
 
   $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
   return $resultQuery;
 }
 
@@ -40,6 +44,28 @@ function postsShow($pdo) {
   $statement->execute();
 
   $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  return $resultQuery;
+}
+
+// FUNCTION TO GET A SPECIFIC USERS POSTS
+function userPosts($pdo) {
+  $id = (int)$_SESSION['user']['id'];
+  $query = "SELECT * FROM posts LEFT JOIN users ON posts.user_id=users.id WHERE id = :id ORDER BY post_id DESC";
+
+  $statement = $pdo->prepare($query);
+  $statement->bindParam(':id', $id, PDO::PARAM_INT);
+  $statement->execute();
+
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
 
   return $resultQuery;
 }

@@ -28,10 +28,7 @@ require __DIR__.'../../views/header.php';
 
     </form>
 
-    <form action="createForm.php" method="post">
-      <small class="form-text text-muted">Not a user yet?</small>
-      <button type="submit" class="btn btn-primary">Create Account</button>
-      </form>
+      <small class="form-text text-muted">Not a user yet? <a href="createForm.php">Create Account</a></small>
 </article>
 
 <?php require __DIR__.'../../views/footer.php'; ?>

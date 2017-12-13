@@ -5,4 +5,5 @@
     <p>This is the home page.</p>
 </article>
 
+
 <?php require __DIR__.'/views/footer.php'; ?>
