@@ -15,6 +15,7 @@
       <h2><a href=""><?php echo $post['title'];?></a></h2>
       <!-- Link to where the creator of the post can edit the post if session is set -->
       <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
+        <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
         <small class="form-text text-muted"><a href="editPost.php?id=<?php echo $post['post_id'] ?>">Edit Post</a></small>
       <?php endif; ?>
       <!-- Actual post content -->

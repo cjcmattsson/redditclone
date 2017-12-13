@@ -14,6 +14,7 @@ $post = $statement->fetch(PDO::FETCH_ASSOC);
 
 <?php if (isset($_SESSION['user'])): ?>
   <div class="col-sm-8 p-0 pt-4">
+    <!-- SENDING POST_ID through $_GET see editPostLogic.php?id=.... -->
   <form action="../app/auth/editPostLogic.php?id=<?php echo $post_id?>" method="post">
     <h2>Edit Post</h2>
     <div class="form-group">

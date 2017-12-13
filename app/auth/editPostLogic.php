@@ -3,8 +3,9 @@
 declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
-
+// GETTING THE ID FROM URL-BAR THAT WAS SENT FROM FORM ON editPost.php
   $post_id = $_GET['id'];
+  
   $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
   $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
   $url = filter_var($_POST['url'], FILTER_SANITIZE_STRING);
