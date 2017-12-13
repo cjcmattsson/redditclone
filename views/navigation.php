@@ -24,6 +24,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/pages/profile.php">Profile</a>
         </li><!-- /nav-item -->
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/createPost.php">Create Post</a>
+        </li><!-- /nav-item -->
       <?php else: ?>
         <li class="nav-item">
           <a class="nav-link" href="/pages/loginForm.php"><?php echo "Login"; ?></a>

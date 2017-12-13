@@ -14,7 +14,8 @@ require __DIR__.'../../views/header.php';
           <img class="profilePic" src="
           <?php if(isset($info['img'])): ?>
             <?php echo "../images/".$info['img']; ?>
-            <?php else: echo "../images/barack.jpg"; ?>
+            <?php else: echo "../images/barack.jpg";?>
+
           <?php endif; ?>" alt="">
           <h1><?php echo $info['name'];?></h1>
           <p><?php echo $info['biography'];?></p>

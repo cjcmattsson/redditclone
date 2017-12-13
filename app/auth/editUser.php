@@ -10,6 +10,7 @@ if (isset($_FILES['img'])) {
   $info = pathinfo($_FILES['img']['name']);
   $ext = $info['extension']; // get the extension of the file
   $newname = $_SESSION['user']['username'].'.'.$ext;
+  $id = (int)$_SESSION['user']['id'];
 
   $img = filter_var($newname, FILTER_SANITIZE_STRING);
 
@@ -18,6 +19,7 @@ if (isset($_FILES['img'])) {
   $statement = $pdo->prepare($query);
 
   $statement->bindParam(':img', $img, PDO::PARAM_STR);
+  $statement->bindParam(':id', $id, PDO::PARAM_INT);
   $statement->execute();
 
   move_uploaded_file($_FILES['img']['tmp_name'], __DIR__.'/../../images/'.$newname);

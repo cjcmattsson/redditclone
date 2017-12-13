@@ -14,7 +14,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <article>
-<form action="../app/auth/edit.php" method="post" enctype="multipart/form-data">
+<form action="../app/auth/editUser.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="biography">Biography</label>
           <textarea class="form-control noresize" type="text"

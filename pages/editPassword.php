@@ -1,6 +1,6 @@
 <?php require __DIR__.'../../views/header.php';?>
 
-<form action="../app/auth/edit.php" method="post" enctype="multipart/form-data">
+<form action="../app/auth/editUser.php" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="password">Password</label>
     <input class="form-control password" type="text" name="password" placeholder="...keep it safe...keep it hidden" required>
