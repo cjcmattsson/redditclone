@@ -10,6 +10,10 @@
         </li><!-- /nav-item -->
 
         <li class="nav-item">
+            <a class="nav-link" href="/pages/posts.php">Posts</a>
+        </li><!-- /nav-item -->
+
+        <li class="nav-item">
             <a class="nav-link" href="/pages/about.php">About</a>
         </li><!-- /nav-item -->
 
