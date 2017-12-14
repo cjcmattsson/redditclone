@@ -44,7 +44,7 @@ require __DIR__.'../../views/header.php';
   <?php foreach ($posts as $post): ?>
       <div class="feed-item">
         <div class="date"><?php echo $post['posttime']?></div>
-        <div class="text">Post: <a href="single-need.php"><?php echo $post['title'];?></a></div>
+        <div class="text">Post: <a href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></div>
       </div>
     <?php endforeach; ?>
     <?php else:?>
