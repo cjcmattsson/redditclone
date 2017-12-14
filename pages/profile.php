@@ -49,7 +49,7 @@ require __DIR__.'../../views/header.php';
     <?php endforeach; ?>
     <?php else:?>
       <div class="feed-item">
-        <div class="text">Write your first post here: <a href="./posts.php">Hello</a></div>
+        <div class="text">Write your first post here: <a href="createPost.php">Hello</a></div>
       </div>
 <?php endif; ?>
 </div>

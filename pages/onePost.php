@@ -7,13 +7,6 @@ $post = onePost($pdo);
 <div class="row">
   <div class="col-md-6">
   <article>
-    <!-- If user hasent chosen an img, a standard image will show -->
-
-    <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
-
-    <!-- THIS IS TO LOOP THROUGH THE ARRAY -->
-
-
       <h2><?php echo $post['title'];?></h2>
       <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
         <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
@@ -28,7 +21,13 @@ $post = onePost($pdo);
       <p><i class="fa fa-calendar"></i> Posted on <?php echo $post['posttime'];?></p>
       <hr>
       <br>
-      <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
+
+<!-- SETUP CONFURM BUTTON IS USERS WANTS TO DELETE POST -->
+<?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
+  <!-- ONLY ALLOW THE USER WHO WROTE THE POST TO DELETE THEM.... -->
+  <a class="deletePost" href="../app/auth/deletePost.php?id=<?php echo $post['post_id']?>"
+    type="button" name="button" onclick="return confirm('Are you sure?')">Delete Post</a>
+<?php endif; ?>
   </article>
   </div>
   </div>
