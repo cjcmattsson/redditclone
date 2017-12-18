@@ -39,7 +39,15 @@ $comments = comments($pdo);
         <!-- FOR FUTURE USER OF EDIT POST -->
         <?php if (isset($_SESSION['user']) && $comment['username'] === $_SESSION['user']['username']): ?>
           <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
-          <small class="form-text text-muted"><a href="editComment.php?id=<?php echo $comment['comment_id'] ?>">Edit Post</a></small>
+          <form class="" action="editComment.php?id=<?php echo $comment['comment_id']?>" method="post">
+              <input type="hidden" name="post_id" value="<?php echo $_GET['id']?> ">
+              <button type="submit" name="button">Edit comment</button>
+          </form>
+
+          <form class="" action="../app/auth/deleteComment.php?id=<?php echo $comment['comment_id']?>" method="post">
+              <input type="hidden" name="post_id" value="<?php echo $_GET['id']?> ">
+              <button type="submit" name="button" onclick="return confirm('You really want to delete this?')">DELETE comment</button>
+          </form>
         <?php endif; ?>
         <small class="form-text text-muted"> Posted on <?php echo $comment['posttime'];?></small>
         <hr>
