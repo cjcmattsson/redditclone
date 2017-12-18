@@ -73,7 +73,10 @@ function userPosts($pdo) {
 
 // FUNCTION TO GET A SPECIFIC POST
 function onePost($pdo) {
-  $id = (int)$_SESSION['user']['id'];
+  if (isset($_SESSION['user'])) {
+    $id = (int)$_SESSION['user']['id'];
+  }
+
   $post_id = $_GET['id'];
   $query = 'SELECT * FROM posts LEFT JOIN users ON posts.user_id=users.id WHERE post_id = :post_id';
 
@@ -88,6 +91,30 @@ function onePost($pdo) {
   }
 
   $post = $statement->fetch(PDO::FETCH_ASSOC);
+
+  return $post;
+}
+
+// FUNCTION TO GET ALL COMMENTS ON POST
+function comments($pdo) {
+  if (isset($_SESSION['user'])) {
+    $id = (int)$_SESSION['user']['id'];
+  }
+
+  $post_id = $_GET['id'];
+  $query = 'SELECT comment_id, comment_text, posttime, username FROM comments INNER JOIN users ON comments.user_id=users.id WHERE post_id = :post_id ORDER BY comment_id DESC';
+
+  $statement = $pdo->prepare($query);
+
+  $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+
+  $statement->execute();
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  $post = $statement->fetchAll(PDO::FETCH_ASSOC);
 
   return $post;
 }

@@ -1,6 +1,7 @@
 <?php require __DIR__.'/../views/header.php';
 
 $post = onePost($pdo);
+$comments = comments($pdo);
 
 ?>
 
@@ -21,6 +22,29 @@ $post = onePost($pdo);
       <p><i class="fa fa-calendar"></i> Posted on <?php echo $post['posttime'];?></p>
       <hr>
       <br>
+      <form action="../app/auth/comment.php?id=<?php echo $post['post_id']?>" method="post">
+        <div class="form-group">
+          <label for="description"><h4>Comment</h4><h6>Max: 50 chars</h6></label>
+          <textarea class="form-control noresize" name="comment" rows="2" maxlength="50"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Comment</button>
+      </form>
+      <br>
+
+      <?php foreach ($comments as $comment): ?>
+
+        <p><i class="fa fa-user"></i><a href=""><?php echo $comment['username'] ?></a>
+        <!-- COMMENT TEXT -->
+        <p class="lead"><i class="fa fa-user"></i><?php echo $comment['comment_text'] ?></p>
+        <!-- FOR FUTURE USER OF EDIT POST -->
+        <?php if (isset($_SESSION['user']) && $comment['username'] === $_SESSION['user']['username']): ?>
+          <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
+          <small class="form-text text-muted"><a href="editComment.php?id=<?php echo $comment['comment_id'] ?>">Edit Post</a></small>
+        <?php endif; ?>
+        <small class="form-text text-muted"> Posted on <?php echo $comment['posttime'];?></small>
+        <hr>
+        <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
+      <?php endforeach; ?>
 
 <!-- SETUP CONFURM BUTTON IS USERS WANTS TO DELETE POST -->
 <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
