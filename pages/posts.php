@@ -19,7 +19,7 @@
         <small class="form-text text-muted"><a href="editPost.php?id=<?php echo $post['post_id'] ?>">Edit Post</a></small>
       <?php endif; ?>
       <!-- Actual post content -->
-      <p><i class="fa fa-user"></i> by <a href=""><?php echo $post['username'] ?></a>
+      <p><i class="fa fa-user"></i> by <a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
       </p>
       <hr>
       <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>

@@ -52,7 +52,7 @@ function postsShow($pdo) {
   return $resultQuery;
 }
 
-// FUNCTION TO GET A SPECIFIC USERS POSTS
+// FUNCTION TO GET CURRENT SESSIONS USERS POSTS
 function userPosts($pdo) {
   $id = (int)$_SESSION['user']['id'];
   $query = "SELECT * FROM posts LEFT JOIN users ON posts.user_id=users.id WHERE id = :id ORDER BY post_id DESC";
@@ -117,4 +117,42 @@ function comments($pdo) {
   $post = $statement->fetchAll(PDO::FETCH_ASSOC);
 
   return $post;
+}
+
+
+// FUNCTION TO GET SPECIFIC USER
+function otherUser($pdo) {
+  $id = $_GET['id'];
+  $query = "SELECT id, name, username, email, biography, img FROM users WHERE id = :id";
+
+  $statement = $pdo->prepare($query);
+  $statement->bindParam(':id', $id, PDO::PARAM_INT);
+  $statement->execute();
+
+
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  return $resultQuery;
+}
+
+// FUNCTION TO GET ANOTHER USERS POSTS
+function otherUserPosts($pdo) {
+  $id = $_GET['id'];
+  $query = "SELECT * FROM posts LEFT JOIN users ON posts.user_id=users.id WHERE id = :id ORDER BY post_id DESC";
+
+  $statement = $pdo->prepare($query);
+  $statement->bindParam(':id', $id, PDO::PARAM_INT);
+  $statement->execute();
+
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  return $resultQuery;
 }
