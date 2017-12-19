@@ -26,7 +26,7 @@ $post_id = $_POST['post_id'];
       <button type="submit" class="btn btn-primary">Edit Comment</button>
     </form>
 
-    <form action="post" method="post">
+    <form action="../../pages/onePost.php?id=<?php echo $post_id?>" method="post">
         <button type="submit" class="btn btn-primary">Cancel</button>
     </form>
   </div>
