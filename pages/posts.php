@@ -26,7 +26,16 @@
       <p><i class="fa fa-user"></i> Check it out: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
 
       <p><i class="fa fa-calendar"></i> Posted on <?php echo $post['posttime'];?></p>
+
+      <!-- VOTE SECTION!  -->
+
+        <button class="voteUp" type="button" name="up" value="1">UP</button>
+        <button class="voteDown" type="button" value="-1">DOWN</button>
+
+
+      <!-- END OF VOTE SECTION -->
       <hr>
+
       <br>
       <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
       <?php if($i == 5) break; ?>
