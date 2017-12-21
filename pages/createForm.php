@@ -16,10 +16,11 @@ require __DIR__.'../../views/header.php';
         </div><!-- /form-group -->
 
         <div class="form-group">
-            <label for="username">Userame</label>
-            <input class="form-control" type="text" name="username" placeholder="Coolkid92" required>
+            <label for="username">Userame</label> <label class="alreadyExists text-danger small"></label>
+            <input class="form-control usernameField" type="text" name="username" placeholder="Coolkid92" required>
+
         </div><!-- /form-group -->
-        
+
         <div class="form-group">
           <label for="biography">Biography</label>
           <textarea class="form-control" type="text" maxlength="200" name="biography" placeholder="I'm a graphic designer that loves to..." required></textarea>

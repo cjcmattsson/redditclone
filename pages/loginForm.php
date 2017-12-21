@@ -12,7 +12,7 @@ require __DIR__.'../../views/header.php';
     <form action="../app/auth/login.php" method="post">
         <div class="form-group">
             <label for="email">Username</label>
-            <input class="form-control" type="text" name="username" placeholder="kurt@wallander.com" required>
+            <input class="form-control" type="text" name="username" placeholder="Coolkid92" required>
             <small class="form-text text-muted">Enter your email address</small>
         </div><!-- /form-group -->
 

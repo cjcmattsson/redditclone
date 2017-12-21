@@ -19,7 +19,7 @@ $post_id = $_POST['post_id'];
     <!-- SENDING POST_ID through $_GET see editPostLogic.php?id=.... -->
     <form action="../app/auth/editCommentLogic.php?id=<?php echo $comment['comment_id']?>" method="post">
       <div class="form-group">
-        <label for="description"><h4>Comment</h4><h6>Max: 50 chars</h6></label>
+        <label for="description"><h4>Change comment</h4><h6>Max: 50 chars</h6></label>
         <textarea class="form-control noresize" name="comment" rows="2" maxlength="50"><?php echo $comment['comment_text'] ;?> </textarea>
         <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
       </div>

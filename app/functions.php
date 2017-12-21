@@ -102,7 +102,7 @@ function comments($pdo) {
   }
 
   $post_id = $_GET['id'];
-  $query = 'SELECT comment_id, comment_text, posttime, username FROM comments INNER JOIN users ON comments.user_id=users.id WHERE post_id = :post_id ORDER BY comment_id DESC';
+  $query = 'SELECT comment_id, user_id, comment_text, posttime, username FROM comments INNER JOIN users ON comments.user_id=users.id WHERE post_id = :post_id ORDER BY comment_id DESC';
 
   $statement = $pdo->prepare($query);
 

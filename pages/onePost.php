@@ -12,8 +12,11 @@ $comments = comments($pdo);
       <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
         <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
         <small class="form-text text-muted"><a href="editPost.php?id=<?php echo $post['post_id'] ?>">Edit Post</a></small>
+        <!-- ONLY ALLOW THE USER WHO WROTE THE POST TO DELETE THEM.... -->
+        <a class="deletePost" href="../app/auth/deletePost.php?id=<?php echo $post['post_id']?>"
+          type="button" name="button" onclick="return confirm('Are you sure?')">Delete Post</a>
       <?php endif; ?>
-      <p><i class="fa fa-user"></i> by <a href=""><?php echo $post['username'] ?></a>
+      <p><i class="fa fa-user"></i> by <a href="user.php?id=<?php echo $post['user_id']?>"><?php echo $post['username'] ?></a>
       </p>
       <hr>
       <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
@@ -25,15 +28,18 @@ $comments = comments($pdo);
       <form action="../app/auth/comment.php?id=<?php echo $post['post_id']?>" method="post">
         <div class="form-group">
           <label for="description"><h4>Comment</h4><h6>Max: 50 chars</h6></label>
-          <textarea class="form-control noresize" name="comment" rows="2" maxlength="50"></textarea>
+          <!-- required and onvalid/oninput to print certain message if u eave field,
+          and to return no message if field has input -->
+          <textarea class="form-control noresize" name="comment" rows="2" maxlength="50" required placeholder="This is where your trolling goes"
+          oninvalid="this.setCustomValidity('You forgot to leave a mean comment!')" oninput="setCustomValidity('')"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit Comment</button>
+        <button type="submit" class="btn btn-primary add">Submit Comment</button>
       </form>
       <br>
 
       <?php foreach ($comments as $comment): ?>
 
-        <p><i class="fa fa-user"></i><a href=""><?php echo $comment['username'] ?></a>
+        <p><i class="fa fa-user"></i><a href="user.php?id=<?php echo $comment['user_id'] ?>"><?php echo $comment['username'] ?></a>
         <!-- COMMENT TEXT -->
         <p class="lead"><i class="fa fa-user"></i><?php echo $comment['comment_text'] ?></p>
         <!-- FOR FUTURE USER OF EDIT POST -->
@@ -54,12 +60,7 @@ $comments = comments($pdo);
         <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
       <?php endforeach; ?>
 
-<!-- SETUP CONFURM BUTTON IS USERS WANTS TO DELETE POST -->
-<?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
-  <!-- ONLY ALLOW THE USER WHO WROTE THE POST TO DELETE THEM.... -->
-  <a class="deletePost" href="../app/auth/deletePost.php?id=<?php echo $post['post_id']?>"
-    type="button" name="button" onclick="return confirm('Are you sure?')">Delete Post</a>
-<?php endif; ?>
+
   </article>
   </div>
   </div>
