@@ -32,8 +32,8 @@
         <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>">UP</button>
         <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>">DOWN</button>
 
+          <p class="sum"></p>
 
-      <!-- END OF VOTE SECTION -->
       <hr>
 
       <br>
