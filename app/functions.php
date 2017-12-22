@@ -156,3 +156,21 @@ function otherUserPosts($pdo) {
 
   return $resultQuery;
 }
+
+// SHOW SUM OF VOTES ON CERTAIN POST
+function voteSum($pdo) {
+  $query = "SELECT * FROM votes WHERE id = :id ORDER BY post_id DESC";
+  $query = "SELECT * FROM votes LEFT JOIN users ON posts.user_id=users.id WHERE id = :id ORDER BY post_id DESC";
+
+  $statement = $pdo->prepare($query);
+  $statement->bindParam(':id', $id, PDO::PARAM_INT);
+  $statement->execute();
+
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  return $resultQuery;
+}

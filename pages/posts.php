@@ -29,8 +29,8 @@
 
       <!-- VOTE SECTION!  -->
 
-        <button class="voteUp" type="button" name="up" value="1">UP</button>
-        <button class="voteDown" type="button" value="-1">DOWN</button>
+        <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>">UP</button>
+        <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>">DOWN</button>
 
 
       <!-- END OF VOTE SECTION -->
