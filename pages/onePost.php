@@ -25,16 +25,19 @@ $comments = comments($pdo);
       <p><i class="fa fa-calendar"></i> Posted on <?php echo $post['posttime'];?></p>
       <hr>
       <br>
-      <form action="../app/auth/comment.php?id=<?php echo $post['post_id']?>" method="post">
-        <div class="form-group">
-          <label for="description"><h4>Comment</h4><h6>Max: 50 chars</h6></label>
-          <!-- required and onvalid/oninput to print certain message if u eave field,
-          and to return no message if field has input -->
-          <textarea class="form-control noresize" name="comment" rows="2" maxlength="50" required placeholder="This is where your trolling goes"
-          oninvalid="this.setCustomValidity('You forgot to leave a mean comment!')" oninput="setCustomValidity('')"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary add">Submit Comment</button>
-      </form>
+      <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
+        <form action="../app/auth/comment.php?id=<?php echo $post['post_id']?>" method="post">
+          <div class="form-group">
+            <label for="description"><h4>Comment</h4><h6>Max: 50 chars</h6></label>
+            <!-- required and onvalid/oninput to print certain message if u eave field,
+            and to return no message if field has input -->
+            <textarea class="form-control noresize" name="comment" rows="2" maxlength="50" required placeholder="This is where your trolling goes"
+            oninvalid="this.setCustomValidity('You forgot to leave a mean comment!')" oninput="setCustomValidity('')"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary add">Submit Comment</button>
+        </form>
+      <?php endif; ?>
+
       <br>
 
       <?php foreach ($comments as $comment): ?>

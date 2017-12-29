@@ -29,8 +29,10 @@
 
       <!-- VOTE SECTION!  -->
 
+      <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
         <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>">UP</button>
         <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>">DOWN</button>
+      <?php endif; ?>
 
           <p class="sum"></p>
 

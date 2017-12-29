@@ -23,19 +23,21 @@ require __DIR__.'../../views/header.php';
         <?php endforeach; ?>
       </article>
       <!-- IF USER PRESSES HIS OWN NAME IN POSTS, HE CAN ACCES THE SAME AS WHEN PRESSING "PROFILE" -->
-      <?php if ($_GET['id'] === $_SESSION['user']['id']): ?>
+      <?php if (isset($_SESSION['user']) && $_SESSION['user']['username']): ?>
+        <?php if ($_GET['id'] === $_SESSION['user']['id'] && isset($_SESSION['user'])): ?>
 
-        <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Settings
-          </a>
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Settings
+            </a>
 
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="editImg.php">Change Avatar</a>
-            <a class="dropdown-item" href="editProfile.php">Edit Profile Info</a>
-            <a class="dropdown-item" href="editPassword.php">Change Password</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="editImg.php">Change Avatar</a>
+              <a class="dropdown-item" href="editProfile.php">Edit Profile Info</a>
+              <a class="dropdown-item" href="editPassword.php">Change Password</a>
+            </div>
           </div>
-        </div>
+        <?php endif; ?>
       <?php endif; ?>
     </div>
 
