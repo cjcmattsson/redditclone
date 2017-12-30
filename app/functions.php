@@ -38,7 +38,8 @@ function userInfo($pdo) {
 
 // FUNCTION TO PRINT OUT POSTS
 function postsShow($pdo) {
-  $query = "SELECT * FROM posts LEFT JOIN users ON posts.user_id=users.id ORDER BY post_id DESC";
+  $query = "SELECT * FROM posts JOIN users ON posts.user_id=users.id
+  ORDER BY post_id DESC";
 
   $statement = $pdo->prepare($query);
   $statement->execute();
@@ -158,15 +159,14 @@ function otherUserPosts($pdo) {
 }
 
 // SHOW SUM OF VOTES ON CERTAIN POST
-function voteSum($pdo, $post_id) {
+function voteSum($pdo) {
 
-  $query = "SELECT sum(vote_dir) AS score FROM votes WHERE post_id=:post_id";
+  $query = "SELECT post_id, sum(vote_dir) AS score FROM votes";
 
   $statement = $pdo->prepare($query);
-  $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
   $statement->execute();
 
-  $resultQuery = $statement->fetch(PDO::FETCH_ASSOC);
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
 
   if (!$statement) {
     die(var_dump($pdo->errorInfo()));

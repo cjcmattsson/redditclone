@@ -3,7 +3,7 @@
 const voteUp = document.querySelectorAll('.voteUp');
 const voteDown = document.querySelectorAll('.voteDown');
 const sum = document.querySelector('.sum');
-
+// sum.innerHTML = 0;
 
 const url = "../../app/auth/votes.php";
 const sumVotes = "../../app/auth/getSumVotes.php";
@@ -22,7 +22,7 @@ fetch(sumVotes, {
   return response.json()
 })
 .then(votes => {
-  sum.innerHTML = 
+
 })
 ;
 

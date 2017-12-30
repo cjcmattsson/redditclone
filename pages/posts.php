@@ -29,12 +29,16 @@
 
       <!-- VOTE SECTION!  -->
 
-      <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
+      <?php if (isset($_SESSION['user'])): ?>
         <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>">UP</button>
         <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>">DOWN</button>
       <?php endif; ?>
 
-          <p class="sum"></p>
+        <!-- SUMMAN AV VOTESEN SKA HIT -->
+        <p class="sum"> <?php echo $post['post_id'] ?> </p>
+
+
+
 
       <hr>
 
