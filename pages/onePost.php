@@ -25,7 +25,7 @@ $comments = comments($pdo);
       <p><i class="fa fa-calendar"></i> Posted on <?php echo $post['posttime'];?></p>
       <hr>
       <br>
-      <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
+      <?php if (isset($_SESSION['user'])): ?>
         <form action="../app/auth/comment.php?id=<?php echo $post['post_id']?>" method="post">
           <div class="form-group">
             <label for="description"><h4>Comment</h4><h6>Max: 50 chars</h6></label>

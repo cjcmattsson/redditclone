@@ -36,12 +36,17 @@ function userInfo($pdo) {
   return $resultQuery;
 }
 
-// FUNCTION TO PRINT OUT POSTS
+// FUNCTION TO PRINT OUT POSTS AND THE SUM OF THEIR VOTES
 function postsShow($pdo) {
-  $query = "SELECT * FROM posts JOIN users ON posts.user_id=users.id
-  ORDER BY post_id DESC";
+  // $query = "SELECT posts.*, users.*,  FROM posts JOIN users ON posts.user_id=users.id
+  // ORDER BY post_id DESC";
 
-  $statement = $pdo->prepare($query);
+  $query2 = "SELECT posts.*, users.username, (SELECT sum(vote_dir) FROM votes
+  WHERE posts.post_id=votes.post_id) AS score FROM posts
+  JOIN votes ON posts.post_id=votes.post_id
+  JOIN users ON posts.user_id=users.id GROUP BY posts.post_id ORDER BY post_id DESC";
+
+  $statement = $pdo->prepare($query2);
   $statement->execute();
 
   $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -51,6 +56,7 @@ function postsShow($pdo) {
   }
 
   return $resultQuery;
+
 }
 
 // FUNCTION TO GET CURRENT SESSIONS USERS POSTS
@@ -158,20 +164,43 @@ function otherUserPosts($pdo) {
   return $resultQuery;
 }
 
-// SHOW SUM OF VOTES ON CERTAIN POST
-function voteSum($pdo) {
-
-  $query = "SELECT post_id, sum(vote_dir) AS score FROM votes";
+function lastNewPost($pdo) {
+  $query = "SELECT post_id FROM posts ORDER BY post_id DESC LIMIT 1";
 
   $statement = $pdo->prepare($query);
   $statement->execute();
 
-  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+  $resultQuery = $statement->fetch(PDO::FETCH_ASSOC);
 
   if (!$statement) {
     die(var_dump($pdo->errorInfo()));
   }
 
   return $resultQuery;
-
 }
+
+//
+// // SHOW SUM OF VOTES ON CERTAIN POST
+// function voteSum($pdo, $post_id) {
+//
+//   // // $query = "SELECT post_id, sum(vote_dir) AS score FROM votes";
+//   // $query2 = "SELECT sum(vote_dir) FROM votes WHERE post_id=:post_id GROUP BY post_id DESC";
+//   $query2 = "SELECT posts.post_id, (SELECT sum(vote_dir) FROM votes
+//     WHERE posts.post_id=votes.post_id) AS score FROM posts
+//     JOIN votes ON posts.post_id=votes.post_id
+//     GROUP BY posts.post_id ORDER BY post_id DESC";
+//
+//
+//   $statement = $pdo->prepare($query2);
+//   $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+//   $statement->execute();
+//
+//   $resultQuery = $statement->fetch(PDO::FETCH_ASSOC);
+//
+//   if (!$statement) {
+//     die(var_dump($pdo->errorInfo()));
+//   }
+//
+//   return $resultQuery;
+//
+// }

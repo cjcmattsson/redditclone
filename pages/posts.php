@@ -6,6 +6,7 @@
     <!-- If user hasent chosen an img, a standard image will show -->
 
     <?php $posts = postsShow($pdo)?>
+
     <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
     <?php $i= 0; ?>
     <!-- THIS IS TO LOOP THROUGH THE ARRAY -->
@@ -35,7 +36,7 @@
       <?php endif; ?>
 
         <!-- SUMMAN AV VOTESEN SKA HIT -->
-        <p class="sum"> <?php echo $post['post_id'] ?> </p>
+        <p class="sum"> <?php echo "User-score: ".$post['score']?> </p>
 
 
 
