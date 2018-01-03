@@ -2,29 +2,14 @@
 
 const voteUp = document.querySelectorAll('.voteUp');
 const voteDown = document.querySelectorAll('.voteDown');
-const sum = document.querySelector('.sum');
-// sum.innerHTML = 0;
+const sum = document.querySelectorAll('.sum');
 
 const url = "../../app/auth/votes.php";
 const sumVotes = "../../app/auth/getSumVotes.php";
 
 
 
-// FOR PRINTING THE SUM OF THE VOTES LIVE
 
-fetch(sumVotes, {
-  method: "POST",
-  headers: {"Content-Type": "application/x-www-form-urlencoded"},
-  credentials: "include",
-  body: `post_id=${voteUp.value}`
-})
-.then(response => {
-  return response.json()
-})
-.then(votes => {
-
-})
-;
 
 // FOR VOTEUP BUTTONS
 Array.from(voteUp).forEach(up => {
@@ -55,5 +40,25 @@ down.addEventListener('click', () => {
     return response.json()
   });
   console.log("då");
+})
+});
+
+// FOR PRINTING THE SUM OF THE VOTES LIVE
+
+Array.from(voteUp).forEach(up => {
+  up.addEventListener('click', () => {
+fetch(sumVotes, {
+  method: "POST",
+  headers: {"Content-Type": "application/x-www-form-urlencoded"},
+  credentials: "include",
+  body: `post_id=${up.value}`
+})
+.then(response => {
+  return response.json()
+})
+.then(voteSum => {
+  console.log(voteSum);
+  sum.innerHTML = `${voteSum.score}`;
+})
 })
 });
