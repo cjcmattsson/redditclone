@@ -29,10 +29,12 @@ if (isset($_POST['up'])) {
   $resultQuery = $voteCheck->fetch(PDO::FETCH_ASSOC);
 
 
-  // IF USER HAS VOTED UP ON POST, DO NOTHING, ELSE INPUT IT INTO DB
+  // IF USER HAS VOTED UP ON POST, DO NOTHING
   if ((int)$resultQuery['vote_dir'] === $vote_dir) {
       echo json_encode("nothing");
-  } else if (isset($resultQuery['vote_dir']) && (int)$resultQuery['vote_dir'] !== $vote_dir) {
+  }
+  // IF VOTER HAS VOTED DOWN EARLIER, UPDATE TO UPVOTE
+  else if (isset($resultQuery['vote_dir']) && (int)$resultQuery['vote_dir'] !== $vote_dir) {
 
     $query = 'UPDATE votes SET vote_dir = :vote_dir WHERE user_id=:user_id AND post_id=:post_id';
 
@@ -51,7 +53,9 @@ if (isset($_POST['up'])) {
 
     echo json_encode($id);
 
-  }  else if ($resultQuery === false) {
+  }
+  // IF VOTER NEVER VOTE BEFORE, INSERT UPVOTE
+  else if ($resultQuery === false) {
     $query = 'INSERT INTO votes (user_id, vote_dir, post_id) VALUES (:user_id, :vote_dir, :post_id)';
 
     $statement = $pdo->prepare($query);
@@ -95,9 +99,12 @@ if (isset($_POST['down'])) {
 
   $resultQuery = $voteCheck->fetch(PDO::FETCH_ASSOC);
 
+// IF USER HAS VOTED DOWN ON POST, DO NOTHING
   if ((int)$resultQuery['vote_dir'] === $vote_dir) {
       echo json_encode("nothing");
-  } else if (isset($resultQuery['vote_dir']) && (int)$resultQuery['vote_dir'] !== $vote_dir) {
+  }
+// IF VOTER HAS VOTED UP EARLIER, UPDATE TO DOWNVOTE
+  else if (isset($resultQuery['vote_dir']) && (int)$resultQuery['vote_dir'] !== $vote_dir) {
 
   $query = 'UPDATE votes SET vote_dir=:vote_dir WHERE user_id=:user_id AND post_id=:post_id';
 
@@ -115,7 +122,9 @@ if (isset($_POST['down'])) {
 
 
 echo json_encode($id);
-} else if (!$resultQuery) {
+}
+// IF VOTER NEVER VOTE BEFORE, INSERT DOWNVOTE
+else if (!$resultQuery) {
   $query = 'INSERT INTO votes (user_id, vote_dir, post_id) VALUES (:user_id, :vote_dir, :post_id)';
 
   $statement = $pdo->prepare($query);
