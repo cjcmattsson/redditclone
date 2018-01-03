@@ -8,3 +8,8 @@
 .noresize {
   resize: none;
 }
+
+.voteScore {
+  display: flex;
+  flex-flow: row;
+}

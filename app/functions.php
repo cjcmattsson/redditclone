@@ -164,6 +164,7 @@ function otherUserPosts($pdo) {
   return $resultQuery;
 }
 
+// TO GET INFO ON LATEST CREATED POST
 function lastNewPost($pdo) {
   $query = "SELECT post_id FROM posts ORDER BY post_id DESC LIMIT 1";
 
@@ -178,29 +179,3 @@ function lastNewPost($pdo) {
 
   return $resultQuery;
 }
-
-//
-// // SHOW SUM OF VOTES ON CERTAIN POST
-// function voteSum($pdo, $post_id) {
-//
-//   // // $query = "SELECT post_id, sum(vote_dir) AS score FROM votes";
-//   // $query2 = "SELECT sum(vote_dir) FROM votes WHERE post_id=:post_id GROUP BY post_id DESC";
-//   $query2 = "SELECT posts.post_id, (SELECT sum(vote_dir) FROM votes
-//     WHERE posts.post_id=votes.post_id) AS score FROM posts
-//     JOIN votes ON posts.post_id=votes.post_id
-//     GROUP BY posts.post_id ORDER BY post_id DESC";
-//
-//
-//   $statement = $pdo->prepare($query2);
-//   $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
-//   $statement->execute();
-//
-//   $resultQuery = $statement->fetch(PDO::FETCH_ASSOC);
-//
-//   if (!$statement) {
-//     die(var_dump($pdo->errorInfo()));
-//   }
-//
-//   return $resultQuery;
-//
-// }
