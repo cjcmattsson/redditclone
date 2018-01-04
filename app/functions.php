@@ -37,6 +37,7 @@ function userInfo($pdo) {
 }
 
 // FUNCTION TO PRINT OUT POSTS AND THE SUM OF THEIR VOTES
+// SORTING ON LATEST POSTED
 function postsShow($pdo) {
   // $query = "SELECT posts.*, users.*,  FROM posts JOIN users ON posts.user_id=users.id
   // ORDER BY post_id DESC";
@@ -45,6 +46,30 @@ function postsShow($pdo) {
   WHERE posts.post_id=votes.post_id) AS score FROM posts
   JOIN votes ON posts.post_id=votes.post_id
   JOIN users ON posts.user_id=users.id GROUP BY posts.post_id ORDER BY post_id DESC";
+
+  $statement = $pdo->prepare($query2);
+  $statement->execute();
+
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  return $resultQuery;
+
+}
+
+// FUNCTION TO PRINT OUT POSTS AND THE SUM OF THEIR VOTES
+// SORTING ON HIGHEST RATING
+function postsShowTopRated($pdo) {
+  // $query = "SELECT posts.*, users.*,  FROM posts JOIN users ON posts.user_id=users.id
+  // ORDER BY post_id DESC";
+
+  $query2 = "SELECT posts.*, users.username, (SELECT sum(vote_dir) FROM votes
+  WHERE posts.post_id=votes.post_id) AS score FROM posts
+  JOIN votes ON posts.post_id=votes.post_id
+  JOIN users ON posts.user_id=users.id GROUP BY posts.post_id ORDER BY score DESC";
 
   $statement = $pdo->prepare($query2);
   $statement->execute();

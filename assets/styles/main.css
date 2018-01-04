@@ -13,3 +13,15 @@
   display: flex;
   flex-flow: row;
 }
+
+.topRated {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
