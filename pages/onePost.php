@@ -15,8 +15,17 @@ $comments = comments($pdo);
         <!-- ONLY ALLOW THE USER WHO WROTE THE POST TO DELETE THEM.... -->
         <a class="deletePost" href="../app/auth/deletePost.php?id=<?php echo $post['post_id']?>"
           type="button" name="button" onclick="return confirm('Are you sure?')">Delete Post</a>
+          <br>
       <?php endif; ?>
-      <p><i class="fa fa-user"></i> by <a href="user.php?id=<?php echo $post['user_id']?>"><?php echo $post['username'] ?></a>
+      <a href="user.php?id=<?php echo $post['user_id'] ?>">
+      <img class="profilePicPosts" src="
+      <?php if(isset($post['img'])): ?>
+        <?php echo "../images/".$post['img']; ?>
+      <?php else: echo "../images/barack.jpg";?>
+
+      <?php endif; ?>" alt="">
+      </a>
+      <p><i class="fa fa-user">Posted by: </i> <a href="user.php?id=<?php echo $post['user_id']?>"><?php echo $post['username'] ?></a>
       </p>
       <hr>
       <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
@@ -42,6 +51,15 @@ $comments = comments($pdo);
 
       <?php foreach ($comments as $comment): ?>
 
+        <a href="user.php?id=<?php echo $comment['user_id'] ?>">
+        <img class="profilePicPostsComment" src="
+        <?php if(isset($comment['img'])): ?>
+          <?php echo "../images/".$comment['img']; ?>
+        <?php else: echo "../images/barack.jpg";?>
+
+        <?php endif; ?>" alt="">
+        </a>
+
         <p><i class="fa fa-user"></i><a href="user.php?id=<?php echo $comment['user_id'] ?>"><?php echo $comment['username'] ?></a>
         <!-- COMMENT TEXT -->
         <p class="lead"><i class="fa fa-user"></i><?php echo $comment['comment_text'] ?></p>
@@ -60,6 +78,7 @@ $comments = comments($pdo);
         <?php endif; ?>
         <small class="form-text text-muted"> Posted on <?php echo $comment['posttime'];?></small>
         <hr>
+
         <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
       <?php endforeach; ?>
 

@@ -42,7 +42,7 @@ function postsShow($pdo) {
   // $query = "SELECT posts.*, users.*,  FROM posts JOIN users ON posts.user_id=users.id
   // ORDER BY post_id DESC";
 
-  $query2 = "SELECT posts.*, users.username, (SELECT sum(vote_dir) FROM votes
+  $query2 = "SELECT posts.*, users.*, (SELECT sum(vote_dir) FROM votes
   WHERE posts.post_id=votes.post_id) AS score FROM posts
   JOIN votes ON posts.post_id=votes.post_id
   JOIN users ON posts.user_id=users.id GROUP BY posts.post_id ORDER BY post_id DESC";
@@ -66,7 +66,7 @@ function postsShowTopRated($pdo) {
   // $query = "SELECT posts.*, users.*,  FROM posts JOIN users ON posts.user_id=users.id
   // ORDER BY post_id DESC";
 
-  $query2 = "SELECT posts.*, users.username, (SELECT sum(vote_dir) FROM votes
+  $query2 = "SELECT posts.*, users.*, (SELECT sum(vote_dir) FROM votes
   WHERE posts.post_id=votes.post_id) AS score FROM posts
   JOIN votes ON posts.post_id=votes.post_id
   JOIN users ON posts.user_id=users.id GROUP BY posts.post_id ORDER BY score DESC";
@@ -134,7 +134,7 @@ function comments($pdo) {
   }
 
   $post_id = $_GET['id'];
-  $query = 'SELECT comment_id, user_id, comment_text, posttime, username FROM comments INNER JOIN users ON comments.user_id=users.id WHERE post_id = :post_id ORDER BY comment_id DESC';
+  $query = 'SELECT comment_id, user_id, comment_text, posttime, username, img FROM comments INNER JOIN users ON comments.user_id=users.id WHERE post_id = :post_id ORDER BY comment_id DESC';
 
   $statement = $pdo->prepare($query);
 

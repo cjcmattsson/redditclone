@@ -5,6 +5,18 @@
   width: 200px;
 }
 
+.profilePicPosts {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.profilePicPostsComment {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
 .noresize {
   resize: none;
 }
