@@ -1,35 +1,35 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" href="/"><?php echo $config['title']; ?></a>
+<nav class="navbar navbar-expand-md navbar-light bg-primary">
+  <a class="navbar-brand text-white" href="/"><?php echo $config['title']; ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="/index.php">Home</a>
+            <a class="nav-link text-white hm-white-light" href="/index.php">Home</a>
         </li><!-- /nav-item -->
 
         <li class="nav-item">
-            <a class="nav-link" href="/pages/posts.php">Posts</a>
-        </li><!-- /nav-item -->
+            <a class="nav-link text-white" href="/pages/posts.php">Posts</a>
+        </li> <!-- /nav-item -->
 
         <li class="nav-item">
-            <a class="nav-link" href="/pages/about.php">About</a>
+            <a class="nav-link text-white" href="/pages/about.php">About</a>
         </li><!-- /nav-item -->
 
         <?php if (isset($_SESSION['user'])): ?>
         <li class="nav-item">
-          <a class="nav-link" href="/app/auth/logout.php"><?php echo "Logout"; ?></a>
+          <a class="nav-link text-white" href="/app/auth/logout.php"><?php echo "Logout"; ?></a>
         </li><!-- /nav-item -->
         <li class="nav-item">
-          <a class="nav-link" href="/pages/profile.php">Profile</a>
+          <a class="nav-link text-white" href="/pages/profile.php">Profile</a>
         </li><!-- /nav-item -->
         <li class="nav-item">
-          <a class="nav-link" href="/pages/createPost.php">Create Post</a>
+          <a class="nav-link text-white" href="/pages/createPost.php">Create Post</a>
         </li><!-- /nav-item -->
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/pages/loginForm.php"><?php echo "Login"; ?></a>
+          <a class="nav-link text-white" href="/pages/loginForm.php"><?php echo "Login"; ?></a>
         </li><!-- /nav-item -->
       <?php endif; ?>
     </ul><!-- /navbar-nav -->

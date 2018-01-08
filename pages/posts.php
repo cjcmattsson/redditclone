@@ -19,7 +19,7 @@
     <?php foreach ($posts as $post): ?>
       <?php $i++; ?>
 
-      <article>
+      <article class="post-feed">
 
         <h2><a href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
         <!-- Link to where the creator of the post can edit the post if session is set -->
@@ -109,6 +109,8 @@
         <p><i class="fa fa-user"></i> Check it out: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
 
         <p><i class="fa fa-calendar"></i> Posted on <?php echo $post['posttime'];?></p>
+                <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button type="button" name="button">Read more & Comment</button></a>
+                <br>
 
         <!-- VOTE SECTION!  -->
 

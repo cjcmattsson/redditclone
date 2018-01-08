@@ -168,7 +168,11 @@ function otherUser($pdo) {
     die(var_dump($pdo->errorInfo()));
   }
 
+  if (!$resultQuery) {
+    die(var_dump("FIXA ETT SNYGGARE MEDDELANDE HÄR"));
+  } else {
   return $resultQuery;
+  }
 }
 
 // FUNCTION TO GET ANOTHER USERS POSTS
