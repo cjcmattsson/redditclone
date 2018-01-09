@@ -6,7 +6,7 @@ require __DIR__.'../../views/header.php';
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <article>
+      <article class="userInfo">
         <!-- If user hasent chosen an img, a standard image will show -->
 
         <?php $infos = userInfo($pdo)?>
@@ -17,13 +17,15 @@ require __DIR__.'../../views/header.php';
             <?php else: echo "../images/barack.jpg";?>
 
           <?php endif; ?>" alt="">
-          <h1><?php echo $info['name'];?></h1>
+          <h1><?php echo $info['username'];?></h1>
+          <h4><?php echo $info['name'];?></h4>
+          <br>
           <p><?php echo $info['biography'];?></p>
           <p><?php echo $info['email'];?></p>
         <?php endforeach; ?>
       </article>
       <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Settings
   </a>
 
@@ -33,10 +35,12 @@ require __DIR__.'../../views/header.php';
     <a class="dropdown-item" href="editPassword.php">Change Password</a>
   </div>
 </div>
+<br>
+<a class="text-white" href="/app/auth/logout.php"><button class="btn btn-primary">Logout</button></a>
     </div>
 
 
-<div class="col-md-6">
+<div class="col-md-6 userInfo">
   <h2>Activity Feed</h2>
   <div class="activity-feed">
   <?php $posts = userPosts($pdo)?>

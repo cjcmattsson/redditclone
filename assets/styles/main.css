@@ -1,4 +1,25 @@
 /* In this file you can add your custom styles. */
+.navProfilePic {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+
+.loginButton {
+  margin-right: 5px;
+}
+
+.userInfo {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userInfo p {
+  text-align: center;
+}
+
 .profilePic {
   border-radius: 50%;
   height: 200px;
