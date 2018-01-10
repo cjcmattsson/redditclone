@@ -41,11 +41,11 @@
         </p>
         <hr>
         <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
-        <p><i class="fa fa-user"></i> Check it out: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
+        <p><i class="fa fa-user"></i> Link: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
 
-        <p><i class="fa fa-calendar"></i> Posted on <?php echo $post['posttime'];?></p>
+        <p><i class="fa fa-calendar"></i><?php echo $post['posttime'];?></p>
         <hr>
-        <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button type="button" name="button">Read more & Comment</button></a>
+        <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button type="button" name="button">Engage/Comment</button></a>
         <br>
         <!-- VOTE SECTION!  -->
 
