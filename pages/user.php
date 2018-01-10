@@ -45,6 +45,7 @@ require __DIR__.'../../views/header.php';
     <div class="col-md-6">
       <h2>Activity Feed</h2>
       <div class="activity-feed">
+        <?php if ($_GET['id'] === $_SESSION['user']['id'] && isset($_SESSION['user'])): ?>
         <?php $posts = otherUserPosts($pdo)?>
         <?php if (count($posts)): ?>
           <?php foreach ($posts as $post): ?>
@@ -53,10 +54,11 @@ require __DIR__.'../../views/header.php';
               <div class="text">Post: <a href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></div>
             </div>
           <?php endforeach; ?>
-        <?php else:?>
+        <?php else: ?>
           <div class="feed-item">
             <div class="text">Write your first post here: <a href="createPost.php">Hello</a></div>
           </div>
+        <?php endif; ?>
         <?php endif; ?>
       </div>
     </div>

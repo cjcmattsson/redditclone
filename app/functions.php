@@ -36,6 +36,22 @@ function userInfo($pdo) {
   return $resultQuery;
 }
 
+// FUNCTION TO SHOW DATABASE INFO ON RANDOM USERS
+function randomUsers($pdo) {
+  $query = "SELECT * FROM users ORDER BY RANDOM() LIMIT 3";
+
+  $statement = $pdo->prepare($query);
+  $statement->execute();
+
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  return $resultQuery;
+}
+
 // FUNCTION TO PRINT OUT POSTS AND THE SUM OF THEIR VOTES
 // SORTING ON LATEST POSTED
 function postsShow($pdo) {
@@ -70,6 +86,27 @@ function postsShowTopRated($pdo) {
   WHERE posts.post_id=votes.post_id) AS score FROM posts
   JOIN votes ON posts.post_id=votes.post_id
   JOIN users ON posts.user_id=users.id GROUP BY posts.post_id ORDER BY score DESC";
+
+  $statement = $pdo->prepare($query2);
+  $statement->execute();
+
+  $resultQuery = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  return $resultQuery;
+
+}
+
+// SORTING ON HIGHEST RATING
+function randomPosts($pdo) {
+  // $query = "SELECT posts.*, users.*,  FROM posts JOIN users ON posts.user_id=users.id
+  // ORDER BY post_id DESC";
+
+  $query2 = "SELECT posts.*, users.* FROM posts
+  JOIN users ON posts.user_id=users.id ORDER BY RANDOM()";
 
   $statement = $pdo->prepare($query2);
   $statement->execute();

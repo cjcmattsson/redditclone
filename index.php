@@ -2,6 +2,7 @@
 
 <h1 class="text-center mb-3">Welcome to RedditClone</h1>
 
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -14,7 +15,7 @@
               <div class="carousel-caption text-left">
                 <h1>Join the community</h1>
                 <p>Create a profile to start sharing your awesome links and engage with the rest of the community</p>
-                <p><a class="btn btn-lg btn-primary" href="pages/createForm.php" role="button">Sign up today</a></p>
+                <p><a class="btn" href="pages/createForm.php" role="button">Sign up today</a></p>
               </div>
             </div>
           </div>
@@ -23,7 +24,7 @@
               <div class="carousel-caption">
                 <h2>Experience a vast diversity of content</h2>
                 <p>Enjoy all the different content shared by the community</p>
-                <p><a class="btn btn-lg btn-primary" href="pages/posts.php" role="button">Browse posts</a></p>
+                <p><a class="btn" href="pages/posts.php" role="button">Browse posts</a></p>
               </div>
             </div>
           </div>
@@ -32,7 +33,7 @@
               <div class="carousel-caption text-right">
                 <h2>What are we all about?</h2>
                 <p>We believe in the free expression of thought - and funny GIF's..</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">About us</a></p>
+                <p><a class="btn" href="#" role="button">About us</a></p>
               </div>
             </div>
           </div>
@@ -47,7 +48,7 @@
         </a>
       </div>
 
-
+<hr class="featurette-divider">
 
   <!-- Marketing messaging and featurettes
   ================================================== -->
@@ -57,57 +58,102 @@
 
     <!-- Three columns of text below the carousel -->
     <h2 class="text-center mb-5">Featured Profiles</h2>
+    <?php $users = randomUsers($pdo); ?>
     <div class="row">
-      <div class="col-lg-4">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-        <h3>Heading</h3>
-        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <?php foreach ($users as $user): ?>
+      <div class="col-lg-4 mb-3 rand-user">
+        <a href="pages/user.php?id=<?php echo $user['id']?>" role="button">
+          <img class="rounded-circle" src="<?php if(isset($user['img'])): ?>
+        <?php echo "../images/".$user['img']; ?>
+        <?php else: echo "../images/barack.jpg";?>
+      <?php endif; ?>" alt="Generic placeholder image" width="140" height="140"></a>
+        <h3> <?php echo $user['username'] ?> </h3>
+        <p><?php echo $user['biography'] ?></p>
+        <p><a class="btn btn-secondary profile" href="pages/user.php?id=<?php echo $user['id']?>" role="button">Read more &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-        <h3>Heading</h3>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-        <h3>Heading</h3>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
 
+    <?php endforeach; ?>
+    </div><!-- /.row -->
 
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
+<h2 class="text-center mb-5">Featured Posts</h2>
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <?php $post = randomPosts($pdo)?>
+
+    <!-- THIS IS TO LOOP THROUGH THE ARRAY -->
+    <div class="row featurette center-block">
+      <div class="col-md-6">
+        <h2 class="featurette-heading"> <?php echo $post[0]['title'] ?></h2>
+        <a class="lead" href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post[0]['url'] ?></a>
+        <p class="lead"><?php echo $post[0]['description'] ?></p>
+        <br>
+        <p><?php echo $post[0]['posttime'] ?></p>
       </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+      <div class="col-md-6">
+        <img class="featurette-image img-fluid mx-auto rand-post-img" src="<?php if(isset($post[0]['img'])): ?>
+      <?php echo "../images/".$post[0]['img']; ?>
+      <?php else: echo "../images/barack.jpg";?>
+    <?php endif; ?>" alt="Generic placeholder image">
       </div>
     </div>
-
     <hr class="featurette-divider">
+
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <h2 class="featurette-heading"> <?php echo $post[1]['title'] ?></h2>
+        <a class="lead" href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post[1]['url'] ?></a>
+        <p class="lead"><?php echo $post[1]['description'] ?></p>
+        <br>
+        <p><?php echo $post[1]['posttime'] ?></p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        <img class="featurette-image img-fluid mx-auto rand-post-img" src="<?php if(isset($post[1]['img'])): ?>
+      <?php echo "../images/".$post[1]['img']; ?>
+      <?php else: echo "../images/barack.jpg";?>
+    <?php endif; ?>" alt="Generic placeholder image">
       </div>
     </div>
+    <hr class="featurette-divider">
 
 
 
+    <!-- THIS IS TO LOOP THROUGH THE ARRAY -->
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading"> <?php echo $post[2]['title'] ?></h2>
+        <a class="lead" href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post[2]['url'] ?></a>
+        <p class="lead"><?php echo $post[2]['description'] ?></p>
+        <br>
+        <p><?php echo $post[2]['posttime'] ?></p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto rand-post-img" src="<?php if(isset($post[2]['img'])): ?>
+      <?php echo "../images/".$post[2]['img']; ?>
+      <?php else: echo "../images/barack.jpg";?>
+    <?php endif; ?>" alt="Generic placeholder image">
+      </div>
+    </div>
+    <hr class="featurette-divider">
 
 
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading"> <?php echo $post[3]['title'] ?></h2>
+        <a class="lead" href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post[3]['url'] ?></a>
+        <p class="lead"><?php echo $post[3]['description'] ?></p>
+        <br>
+        <p><?php echo $post[3]['posttime'] ?></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto rand-post-img" src="<?php if(isset($post[3]['img'])): ?>
+      <?php echo "../images/".$post[3]['img']; ?>
+      <?php else: echo "../images/barack.jpg";?>
+    <?php endif; ?>" alt="Generic placeholder image">
+      </div>
+    </div>
 
 <?php require __DIR__.'/views/footer.php'; ?>

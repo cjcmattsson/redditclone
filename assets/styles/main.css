@@ -1,3 +1,12 @@
+.nav-color {
+  background-color: rgb(66, 181, 143);
+}
+
+.nav-color button {
+  background-color: rgb(57, 164, 129);
+  border-color: rgb(57, 164, 129);
+}
+
 .navProfilePic {
   border-radius: 50%;
   height: 25px;
@@ -90,6 +99,13 @@
   text-shadow: 1px 1px 3px rgba(40, 39, 39, 1);
 }
 
+.carousel-caption a {
+  text-shadow: none;
+  border-color: rgb(57, 164, 129);
+  background-color: rgb(57, 164, 129);
+  color: white;
+}
+
 img.d-block {
   max-width: 180%;
   background-size: contain;
@@ -102,10 +118,26 @@ img.d-block {
   width: 100%
 }
 
-.col-lg-4 {
+.rand-user {
   display: flex;
-  text-align: justify;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.rand-user img {
+  -webkit-box-shadow: 0px 0px 21px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 21px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 21px -4px rgba(0,0,0,0.75);
+}
+
+.profile {
+  background-color: rgb(57, 164, 129);
+  border-color: rgb(57, 164, 129);
+}
+
+.rand-post-img {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
 }

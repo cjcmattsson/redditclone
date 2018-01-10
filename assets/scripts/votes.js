@@ -62,7 +62,7 @@ Array.from(voteUp).forEach(up => {
       console.log(up);
       singleSum.textContent = `${voteSum.score}`;
   })
-}, 200);
+}, 100);
 });
 });
 
@@ -85,6 +85,6 @@ Array.from(voteDown).forEach(down => {
       console.log(down);
       singleSum.textContent = `${voteSum.score}`;
   })
-  }, 200);
+}, 100);
 });
 });
