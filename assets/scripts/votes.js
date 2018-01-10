@@ -9,8 +9,6 @@ const sumVotes = "../../app/auth/getSumVotes.php";
 
 
 
-
-
 // FOR VOTEUP BUTTONS
 Array.from(voteUp).forEach(up => {
   up.addEventListener('click', () => {
@@ -48,6 +46,7 @@ Array.from(voteDown).forEach(down => {
 // UPVOTE
 Array.from(voteUp).forEach(up => {
   up.addEventListener('click', () => {
+    setTimeout(function () {
     fetch(sumVotes, {
       method: "POST",
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -63,12 +62,14 @@ Array.from(voteUp).forEach(up => {
       console.log(up);
       singleSum.textContent = `${voteSum.score}`;
   })
+}, 200);
 });
 });
 
 // DOWNVOTE
 Array.from(voteDown).forEach(down => {
   down.addEventListener('click', () => {
+    setTimeout(function () {
     fetch(sumVotes, {
       method: "POST",
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -84,5 +85,6 @@ Array.from(voteDown).forEach(down => {
       console.log(down);
       singleSum.textContent = `${voteSum.score}`;
   })
+  }, 200);
 });
 });

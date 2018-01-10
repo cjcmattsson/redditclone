@@ -1,3 +1,10 @@
+<hr class="featurette-divider">
+
+<!-- FOOTER -->
+<footer class="container">
+  <p class="float-right"><a href="#">Back to top</a></p>
+  <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
 </div><!-- /container -->
 <?php if (stripos($_SERVER['REQUEST_URI'], 'createForm.php')): ?>
   <script src="/assets/scripts/create.js"></script>

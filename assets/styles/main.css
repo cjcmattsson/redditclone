@@ -66,8 +66,28 @@
   margin-bottom: 5vh;
 }
 
+.first-slide, .second-slide, .third-slide {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.first-slide {
+  background-image: url("../../images/siteImages/mount3.jpg");
+}
+.second-slide {
+  background-image: url("../../images/siteImages/mount2.jpg");
+}
+.third-slide {
+  background-image: url("../../images/siteImages/mount4.jpg");
+}
+
 .carousel-item {
   height: 50vh;
+}
+
+.carousel-caption {
+  text-shadow: 1px 1px 3px rgba(40, 39, 39, 1);
 }
 
 img.d-block {
@@ -80,4 +100,12 @@ img.d-block {
   left: 0;
   text-align:center;
   width: 100%
+}
+
+.col-lg-4 {
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
