@@ -25,7 +25,7 @@ require __DIR__.'../../views/header.php';
         <?php endforeach; ?>
       </article>
       <div class="dropdown show">
-  <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Settings
   </a>
 

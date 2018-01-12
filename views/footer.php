@@ -1,5 +1,4 @@
 <hr class="featurette-divider">
-
 <!-- FOOTER -->
 <footer class="container">
   <p class="float-right"><a href="#">Back to top</a></p>

@@ -33,7 +33,7 @@
               <div class="carousel-caption text-right">
                 <h2>What are we all about?</h2>
                 <p>We believe in the free expression of thought - and funny GIF's..</p>
-                <p><a class="btn" href="#" role="button">About us</a></p>
+                <p><a class="btn" href="pages/about.php" role="button">About us</a></p>
               </div>
             </div>
           </div>
@@ -68,8 +68,7 @@
         <?php else: echo "../images/barack.jpg";?>
       <?php endif; ?>" alt="Generic placeholder image" width="140" height="140"></a>
         <h3> <?php echo $user['username'] ?> </h3>
-        <p><?php echo $user['biography'] ?></p>
-        <p><a class="btn btn-secondary profile" href="pages/user.php?id=<?php echo $user['id']?>" role="button">Read more &raquo;</a></p>
+        <p><a class="btn btn-secondary profile" href="pages/user.php?id=<?php echo $user['id']?>" role="button">Visit User &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
 
     <?php endforeach; ?>

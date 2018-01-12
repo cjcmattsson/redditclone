@@ -9,7 +9,8 @@ if (isset($_FILES['img'])) {
   // Giving the uploaded img the username + the extension of the file
   $info = pathinfo($_FILES['img']['name']);
   $ext = $info['extension']; // get the extension of the file
-  $newname = $_SESSION['user']['username'].'.'.$ext;
+  $username = $_SESSION['user']['username'];
+  $newname = $username.'.'.$ext;
   $id = (int)$_SESSION['user']['id'];
 
   $img = filter_var($newname, FILTER_SANITIZE_STRING);
@@ -20,11 +21,24 @@ if (isset($_FILES['img'])) {
 
   $statement->bindParam(':img', $img, PDO::PARAM_STR);
   $statement->bindParam(':id', $id, PDO::PARAM_INT);
-  $statement->execute();
 
-  move_uploaded_file($_FILES['img']['tmp_name'], __DIR__.'/../../images/'.$newname);
+  if ($_FILES['img']['size'] >= 5000000) {
+    redirect('../../pages/editImg.php');
+  } else {
+    if (file_exists(__DIR__.'/../../images/'.$username.'.jpg')) {
+      unlink(__DIR__.'/../../images/'.$username.'.jpg');
+    }
+    if (file_exists(__DIR__.'/../../images/'.$username.'.png')) {
+      unlink(__DIR__.'/../../images/'.$username.'.png');
+    }
+    if (file_exists(__DIR__.'/../../images/'.$username.'.jpeg')) {
+      unlink(__DIR__.'/../../images/'.$username.'.jpeg');
+    }
+    $statement->execute();
+    move_uploaded_file($_FILES['img']['tmp_name'], __DIR__.'/../../images/'.$newname);
+    redirect('../../pages/profile.php');
+  }
 
-  redirect('../../pages/profile.php');
 
   // SE NEDAN FÖR SIZE-SIX PÅ BILDEN
   //   if (isset($_FILES['img'])) {
