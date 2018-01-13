@@ -8,12 +8,12 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-            <a class="nav-link text-white home" href="/index.php">Home</a>
+            <a class="nav-link text-white home hovering" href="/index.php">Home</a>
         </li> <!-- /nav-item -->
         <li class="nav-item">
-            <a class="nav-link text-white posts" href="/pages/posts.php">Posts</a>
+            <a class="nav-link text-white posts hovering" href="/pages/posts.php">Posts</a>
         </li> <!-- /nav-item -->
-        <li class="nav-item">
+        <li class="nav-item hovering hovering">
             <a class="nav-link text-white about" href="/pages/about.php">About</a>
         </li><!-- /nav-item -->
         <?php if (isset($_SESSION['user'])): ?>

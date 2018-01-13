@@ -1,14 +1,16 @@
 <?php require __DIR__.'/../views/header.php';?>
 
+<div class="page-padding-top">
 
-<input class="latestPosts" type="button" name="" value="Latest">
-<input class="topRatedPosts" type="button" name="" value="Highest Rated">
-<hr>
+<a class="btn btn-lg btn-block latestPosts hovering" href="#" role="button"><span class="logo">Latest</span></a>
+<a class="btn btn-lg btn-block topRatedPosts hovering" href="#" role="button"><span class="logo">Trending</span></a>
 
+<br>
 <div class="latest">
   <h1>Latest Posts</h1>
+  <hr>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <!-- If user hasent chosen an img, a standard image will show -->
 
 
@@ -20,7 +22,7 @@
     <?php foreach ($posts as $post): ?>
       <?php $i++; ?>
 
-      <article class="post-feed">
+      <article class="feed-posts">
 
         <h2><a href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
         <!-- Link to where the creator of the post can edit the post if session is set -->
@@ -40,12 +42,10 @@
         <p><i class="fa fa-user">Posted by: </i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
 
         </p>
-        <hr>
         <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
         <p><i class="fa fa-user"></i> Link: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
 
         <p><i class="fa fa-calendar"></i><?php echo $post['posttime'];?></p>
-        <hr>
         <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button type="button" name="button">Engage/Comment</button></a>
         <br>
         <!-- VOTE SECTION!  -->
@@ -74,7 +74,11 @@
 
 
     <!-- If user hasent chosen an img, a standard image will show -->
-
+    <div class="topRated">
+      <h1>Trending Posts</h1>
+      <hr>
+    <div class="row">
+      <div class="col-md-6">
 
     <?php $posts = postsShowTopRated($pdo)?>
 
@@ -136,5 +140,5 @@
 
 <?php require 'postForm.php'; ?>
 
-
+</div>
 <?php require __DIR__.'/../views/footer.php'; ?>

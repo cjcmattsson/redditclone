@@ -5,6 +5,10 @@ body {
   background-color: white;
 }
 
+.page-padding-top {
+  padding-top: 100px;
+}
+
 #myCarousel {
   padding-top: 80px;
 }
@@ -22,12 +26,13 @@ body {
 }
 
 .nav-item:hover {
-  background-color: rgb(66, 204, 159);
+  background-color: rgb(65, 193, 151);
 }
 .navActive {
   border-radius: 10%;
-  background-color:rgb(65, 193, 151);
+  background-color: rgb(57, 164, 129);
 }
+
 
 @media (max-width: 992px) {
   .navActive {
@@ -113,12 +118,12 @@ body {
   display: none;
 }
 
-.show {
-  display: block;
+.feed-posts {
+ text-align: left;
 }
 
-.container.pt-5 {
-  padding-top: 15vh!important;
+.show {
+  display: block;
 }
 
 #myCarousel {
@@ -154,6 +159,42 @@ body {
   border-color: rgb(57, 164, 129);
   background-color: rgb(57, 164, 129);
   color: white;
+}
+
+.latestPosts,.topRatedPosts  {
+  text-shadow: none;
+  border-color: rgb(57, 164, 129);
+  background-color: rgb(57, 164, 129);
+  color: white;
+  border: none;
+}
+
+.latestPosts:hover,.topRatedPosts:hover  {
+  background-color: rgb(65, 193, 151);
+}
+.latestPosts:active,.topRatedPosts:active  {
+  background-color: rgb(65, 193, 151)!important;
+  outline: none !important;
+  box-shadow: none;
+  border-color: none;
+}
+
+.latestPosts:focus, .latestPosts:active, .topRatedPosts:focus,.topRatedPosts:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+.hovering {
+  transition: all 0.2s ease-out;
+}
+
+.hovering:hover {
+  color: white;
+  transform: scaleX(1.0255);
+}
+
+.topRatedPosts:focus {
+  outline: none!important;
 }
 
 img.d-block {

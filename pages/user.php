@@ -45,7 +45,7 @@ require __DIR__.'../../views/header.php';
     <div class="col-md-6">
       <h2>Activity Feed</h2>
       <div class="activity-feed">
-        <?php if ($_GET['id'] === $_SESSION['user']['id'] && isset($_SESSION['user'])): ?>
+        <?php if (isset($_SESSION['user']) && $_GET['id'] === $_SESSION['user']['id']): ?>
         <?php $posts = otherUserPosts($pdo)?>
         <?php if (count($posts)): ?>
           <?php foreach ($posts as $post): ?>
