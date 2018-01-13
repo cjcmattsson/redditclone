@@ -1,6 +1,6 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-light nav-color">
-    <a class="navbar-brand text-white" href="/"><?php echo $config['title']; ?></a>
-    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand text-white logo" href="/"><?php echo $config['title']; ?></a>
+    <button class="navbar-toggler bg-light hamburger" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -8,17 +8,17 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-            <a class="nav-link text-white" href="/index.php">Home</a>
+            <a class="nav-link text-white home" href="/index.php">Home</a>
         </li> <!-- /nav-item -->
         <li class="nav-item">
-            <a class="nav-link text-white" href="/pages/posts.php">Posts</a>
+            <a class="nav-link text-white posts" href="/pages/posts.php">Posts</a>
         </li> <!-- /nav-item -->
         <li class="nav-item">
-            <a class="nav-link text-white" href="/pages/about.php">About</a>
+            <a class="nav-link text-white about" href="/pages/about.php">About</a>
         </li><!-- /nav-item -->
         <?php if (isset($_SESSION['user'])): ?>
         <li class="nav-item">
-          <a class="nav-link text-white" href="/pages/createPost.php">Create Post</a>
+          <a class="nav-link text-white" href="/pages/createPost.php">Post Op!</a>
         </li><!-- /nav-item -->
       <?php endif; ?>
       </ul>

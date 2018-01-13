@@ -1,5 +1,6 @@
 <?php require __DIR__.'/../views/header.php';?>
 
+
 <input class="latestPosts" type="button" name="" value="Latest">
 <input class="topRatedPosts" type="button" name="" value="Highest Rated">
 <hr>
@@ -71,10 +72,7 @@
 </div>
 
 
-<div class="topRated">
-  <h1>Top Rated Posts</h1>
-<div class="row">
-  <div class="col-md-6">
+
     <!-- If user hasent chosen an img, a standard image will show -->
 
 
