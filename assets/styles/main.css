@@ -12,15 +12,15 @@ body {
 }
 
 .hovering {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .hovering:hover {
-  color: white;
-  transform: scale(1.010);
+  color: #E6ECF0!important;
 }
 
 /* NAVBAR */
+
 .nav-color {
   background-color: rgb(66, 181, 143);
   -webkit-box-shadow: 0px 0px 21px -4px rgba(0,0,0,0.75);
@@ -33,32 +33,22 @@ body {
   color: white!important;
 }
 
+.nav-item a:hover {
+  text-decoration: underline;
+}
+
 .nav-item {
   border-radius: 10%;
   margin-right: 3px;
-  transition: all 0.2s ease-in;
-}
-
-.nav-item:hover {
-  border-radius: 10%;
-  transform: scale(1.1);
+  color: white!important;
 }
 
 .navActive {
-  border-radius: 10%;
-  transform: scale(1.1);
-  color: rgb(57, 164, 129)!important;
-}
-
-.navActive {
-  color: rgb(57, 164, 129)!important;
+  text-decoration: underline;
 }
 
 
 @media (max-width: 992px) {
-  .navActive {
-    border-radius: 0%;
-  }
 
   .nav-item a {
     padding-left: 5px!important;
@@ -257,19 +247,38 @@ body {
   align-items: flex-start;
   flex-flow: row;
   border: 1px solid;
-  border-color: rgb(57, 164, 129);
+  border-color: #E5E5E5;
   margin-bottom: 10px;
+}
+
+.feed-posts:hover {
+  background-color: #F5F8FA;
+  cursor: pointer;
+}
+
+.post-text {
+  color: black!important;
+}
+.post-text:hover {
+  text-decoration: none;
 }
 
 .profilePicPosts {
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  width: 75px;
+}
+
+@media (max-width: 767px) {
+  .profilePicPosts {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 .pic-post {
   height: 100%;
-  padding: 10px;
+  padding-top: 15px;
   width: 20%;
   display: flex;
   justify-content: center;
@@ -277,7 +286,7 @@ body {
 
 .content-post {
   width: 80%;
-  padding: 10px;
+  padding: 10px 0;
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
@@ -309,7 +318,16 @@ body {
   display: block;
 }
 
+.post-type-buttons {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .latestPosts, .topRatedPosts  {
+  margin: 0;
+  width: 45%;
   text-shadow: none;
   border-color: rgb(57, 164, 129);
   background-color: rgb(57, 164, 129);
