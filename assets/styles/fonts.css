@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body {
+
+}
 
 .logo {
   font-family: 'Pacifico', cursive;
+}
+
+.logo-navbar {
+  font-size: 22px;
 }
 
 .opflippers {

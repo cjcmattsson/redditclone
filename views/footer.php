@@ -2,7 +2,7 @@
 <!-- FOOTER -->
 <footer class="container">
   <p><a href="#">Back to top</a></p>
-  <p class="pb-3">&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  <p class="pb-3">&copy; OpFlipper Inc. 2017 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 </footer>
 </div><!-- /container -->
 <?php if (stripos($_SERVER['REQUEST_URI'], 'createForm.php')): ?>

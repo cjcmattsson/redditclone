@@ -12,6 +12,7 @@
 <div class="row">
   <div class="col-md-12">
     <!-- If user hasent chosen an img, a standard image will show -->
+<div class="all-posts-container">
 
 
     <?php $posts = postsShow($pdo)?>
@@ -24,13 +25,14 @@
 
       <article class="feed-posts">
 
-        <h2><a href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
         <!-- Link to where the creator of the post can edit the post if session is set -->
         <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
           <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
           <small class="form-text text-muted"><a href="editPost.php?id=<?php echo $post['post_id'] ?>">Edit Post</a></small>
         <?php endif; ?>
         <!-- Actual post content -->
+        <div class="pic-post">
+
         <a href="user.php?id=<?php echo $post['user_id'] ?>">
         <img class="profilePicPosts" src="
         <?php if(isset($post['img'])): ?>
@@ -39,6 +41,10 @@
 
         <?php endif; ?>" alt="">
         </a>
+      </div>
+      <div class="content-post">
+
+        <h2><a href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
         <p><i class="fa fa-user">Posted by: </i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
 
         </p>
@@ -60,11 +66,9 @@
           <p> Score: </p> <p class="sum"> <?php echo " ".$post['score']?> </p>
         </div>
 
-
-        <hr>
-        <br>
         <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
         <?php if($i == 5) break; ?>
+      </div>
       </article>
     <?php endforeach; ?>
   </div>
@@ -78,7 +82,7 @@
       <h1>Trending Posts</h1>
       <hr>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
 
     <?php $posts = postsShowTopRated($pdo)?>
 
@@ -88,7 +92,7 @@
     <?php foreach ($posts as $post): ?>
       <?php $i++; ?>
 
-      <article>
+      <article class="feed-posts">
         <h2><a href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
         <!-- Link to where the creator of the post can edit the post if session is set -->
         <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
@@ -135,6 +139,8 @@
     <?php endforeach; ?>
   </div>
 </div>
+</div>
+
 </div>
 
 
