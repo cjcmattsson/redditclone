@@ -14,19 +14,21 @@
     <div class="row">
       <div class="col-md-12">
         <div class="col-sm-6 p-0 mx-auto">
-          <form class="post-page-form" action="../app/auth/newPost.php" method="post">
+          <form class="post-page-form" action="../app/auth/newPost.php" method="post" required>
             <div class="form-group">
-              <button class="exit-button" type="button" name="button">Hide</button>
-              <input type="text" class="form-control show-hidden" name="title" placeholder="Got somethin on ya mind?" maxlength="35">
+              <input type="text" class="form-control show-hidden" name="title" placeholder="Got somethin on ya mind?" maxlength="35" required>
             </div>
             <div class="show-form">
               <div class="form-group">
-                <textarea class="form-control noresize" name="description"rows="3" placeholder="Description" maxlength="200"></textarea>
+                <textarea class="form-control noresize" name="description"rows="3" placeholder="Description" maxlength="200" required></textarea>
               </div>
               <div class="form-group">
                 <input type="url" class="form-control" name="url" placeholder="Link/URL">
               </div>
+              <div class="buttons-post">
               <button type="submit" class="btn btn-primary mb-3">Submit Post</button>
+              <button type="button" class="btn mb-3 exit-button">Cancel</button>
+            </div>
             </div>
 
           </form>
@@ -85,7 +87,7 @@
                   <p class="sum"> <?php echo " ".$post['score']?> </p>
                   <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">arrow_downward</i></button>
                 <?php endif; ?>
-                <?php if($i == 5) break; ?>
+                <?php if($i == 10) break; ?>
 
                 <!-- SUMMAN AV VOTESEN SKA HIT -->
               </div>
@@ -104,7 +106,26 @@
   <hr>
   <div class="row">
     <div class="col-md-12">
+      <div class="col-sm-6 p-0 mx-auto">
+        <form class="post-page-form-2" action="../app/auth/newPost.php" method="post">
+          <div class="form-group">
+            <input type="text" class="form-control show-hidden-2" name="title" placeholder="Got somethin on ya mind?" maxlength="35">
+          </div>
+          <div class="show-form-2">
+            <div class="form-group">
+              <textarea class="form-control noresize" name="description"rows="3" placeholder="Description" maxlength="200"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="url" class="form-control" name="url" placeholder="Link/URL">
+            </div>
+            <div class="buttons-post">
+            <button type="submit" class="btn btn-primary mb-3">Submit Post</button>
+            <button type="button" class="btn mb-3 exit-button-2">Cancel</button>
+          </div>
+          </div>
 
+        </form>
+      </div>
       <div class="all-posts-container">
 
 
@@ -159,7 +180,7 @@
                 <p class="sum"> <?php echo " ".$post['score']?> </p>
                 <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">arrow_downward</i></button>
               <?php endif; ?>
-              <?php if($i == 5) break; ?>
+              <?php if($i == 10) break; ?>
 
               <!-- SUMMAN AV VOTESEN SKA HIT -->
             </div>
@@ -173,6 +194,5 @@
 
 
 </div>
-<?php require 'postForm.php'; ?>
 
 <?php require __DIR__.'/../views/footer.php'; ?>
