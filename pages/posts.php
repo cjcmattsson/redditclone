@@ -3,8 +3,8 @@
 <div class="page-padding-top">
 
 <div class="post-type-buttons">
-<a class="btn btn-lg btn-block mt-0 latestPosts hovering" href="#" role="button"><span class="logo">Latest</span></a>
-<a class="btn btn-lg btn-block mt-0 topRatedPosts hovering" href="#" role="button"><span class="logo">Trending</span></a>
+<a class="btn btn-lg btn-block mt-0 latestPosts hovering" href="#" role="button"><span class="logo">Recent <i class="material-icons">new_releases</i></span></a>
+<a class="btn btn-lg btn-block mt-0 topRatedPosts hovering" href="#" role="button"><span class="logo">Trending <i class="material-icons">trending_up</i></span></a>
 </div>
 
 <br>
@@ -61,8 +61,8 @@
 
         <div class="voteScore">
         <?php if (isset($_SESSION['user'])): ?>
-          <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>">UP</button>
-          <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>">DOWN</button>
+          <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>"><i class="material-icons">thumb_up</i></button>
+          <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">thumb_down</i></button>
         <?php endif; ?>
 
         <!-- SUMMAN AV VOTESEN SKA HIT -->
