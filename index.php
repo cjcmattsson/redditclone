@@ -12,7 +12,7 @@
     <div class="carousel-item active first-slide">
       <div class="container">
         <div class="carousel-caption text-left">
-          <h1>Join the <span class="logo">OpFlip</span> community</h1>
+          <h2>Join the <span class="logo">OpFlip</span> community</h2>
           <p>Start your journey towards changing the stupid peoples opinions - TODAY</p>
           <p><a class="btn profile" href="pages/createForm.php" role="button">Sign up to <span class="logo">OpFlip</span></a></p>
         </div>
@@ -57,7 +57,7 @@
 
   <!-- Three columns of text below the carousel -->
 
-  <h2 class="text-center mb-4 opflippers"><span class="logo">OpFlippers</span> of Today</h2>
+  <h1 class="text-center mb-3 opflippers"><span class="logo">Featured Users</span></h1>
   <hr class="featurette-divider">
   <?php $users = randomUsers($pdo); ?>
   <div class="row">
@@ -68,7 +68,7 @@
             <?php echo "../images/".$user['img']; ?>
           <?php else: echo "../images/barack.jpg";?>
           <?php endif; ?>" alt="Generic placeholder image"></a>
-          <p><a class="btn btn-secondary profile" href="pages/user.php?id=<?php echo $user['id']?>" role="button">Peak at <?php echo $user['username'] ?></a></p>
+          <p><a class="btn btn-secondary profile" href="pages/user.php?id=<?php echo $user['id']?>" role="button">@ <?php echo $user['username'] ?></a></p>
         </div><!-- /.col-lg-4 -->
 
       <?php endforeach; ?>
@@ -77,7 +77,7 @@
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
-    <h2 class="text-center mb-4 opflippers"><span class="logo">OpFlipps</span> of Today</h2>
+    <h1 class="text-center mb-3 opflippers"><span class="logo">Featured Posts</span></h1>
     <hr class="featurette-divider">
     <?php $post = randomPosts($pdo)?>
 

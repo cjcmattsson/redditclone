@@ -9,7 +9,7 @@
 
 <br>
 <div class="latest">
-  <h1 class="text-center">Latest Posts</h1>
+  <h1 class="text-center"><span class="logo">Recent Posts<i class="material-icons">new_releases</i></span></h1>
   <hr>
 <div class="row">
   <div class="col-md-12">
@@ -25,7 +25,7 @@
     <?php foreach ($posts as $post): ?>
       <?php $i++; ?>
 
-      <article class="feed-posts" onclick="location.href='onePost.php?id=<?php echo $post['post_id'] ?>';">
+      <article class="feed-posts">
 
         <!-- Link to where the creator of the post can edit the post if session is set -->
 
@@ -44,33 +44,32 @@
       <div class="content-post">
 
         <h2><a class="post-text" href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
-        <small><i class="fa fa-calendar"></i><?php echo $post['posttime'];?></small>
+        <p class="time-posts-name"><i class="fa fa-user"></i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
+        <small class="time-posts-name"><i class="fa fa-calendar"></i><?php echo $post['posttime'];?></small>
         <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
           <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
           <small class="form-text text-muted"><a href="editPost.php?id=<?php echo $post['post_id'] ?>">Edit Post</a></small>
         <?php endif; ?>
-        <p><i class="fa fa-user">Posted by: </i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
 
         </p>
         <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
         <p><i class="fa fa-user"></i> Link: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
 
-        <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button type="button" name="button">Engage/Comment</button></a>
-        <br>
+        <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button class="engage" type="button" name="button">Engage/Comment</button></a>
         <!-- VOTE SECTION!  -->
 
-        <div class="voteScore">
-        <?php if (isset($_SESSION['user'])): ?>
-          <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>"><i class="material-icons">thumb_up</i></button>
-          <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">thumb_down</i></button>
-        <?php endif; ?>
-
-        <!-- SUMMAN AV VOTESEN SKA HIT -->
-          <p> Score: </p> <p class="sum"> <?php echo " ".$post['score']?> </p>
-        </div>
 
         <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
         <?php if($i == 5) break; ?>
+      </div>
+      <div class="voteScore">
+        <?php if (isset($_SESSION['user'])): ?>
+          <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>"><i class="material-icons">exposure_plus_1</i></button>
+          <p class="sum"> <?php echo " ".$post['score']?> </p>
+          <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">exposure_neg_1</i></button>
+        <?php endif; ?>
+
+        <!-- SUMMAN AV VOTESEN SKA HIT -->
       </div>
       </article>
     <?php endforeach; ?>
@@ -83,7 +82,7 @@
 
 
     <div class="topRated">
-      <h1 class="text-center">Trending Posts</h1>
+      <h1 class="text-center"><span class="logo">Trending Posts<i class="material-icons">trending_up</i></span></h1>
       <hr>
     <div class="row">
       <div class="col-md-12">
@@ -99,7 +98,7 @@
     <?php foreach ($posts as $post): ?>
       <?php $i++; ?>
 
-      <article class="feed-posts" onclick="location.href='onePost.php?id=<?php echo $post['post_id'] ?>';">
+      <article class="feed-posts">
 
         <!-- Link to where the creator of the post can edit the post if session is set -->
 
@@ -118,33 +117,33 @@
       <div class="content-post">
 
         <h2><a class="post-text" href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
-        <small><i class="fa fa-calendar"></i><?php echo $post['posttime'];?></small>
+        <p class="time-posts-name"><i class="fa fa-user"></i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
+        <small class="time-posts-name"><i class="fa fa-calendar"></i><?php echo $post['posttime'];?></small>
         <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
           <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
           <small class="form-text text-muted"><a href="editPost.php?id=<?php echo $post['post_id'] ?>">Edit Post</a></small>
         <?php endif; ?>
-        <p><i class="fa fa-user">Posted by: </i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
 
         </p>
         <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
         <p><i class="fa fa-user"></i> Link: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
 
-        <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button type="button" name="button">Engage/Comment</button></a>
-        <br>
+        <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button class="engage" type="button">Engage/Comment</button></a>
+
         <!-- VOTE SECTION!  -->
 
-        <div class="voteScore">
-        <?php if (isset($_SESSION['user'])): ?>
-          <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>">UP</button>
-          <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>">DOWN</button>
-        <?php endif; ?>
-
-        <!-- SUMMAN AV VOTESEN SKA HIT -->
-          <p> Score: </p> <p class="sum"> <?php echo " ".$post['score']?> </p>
-        </div>
 
         <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
         <?php if($i == 5) break; ?>
+      </div>
+      <div class="voteScore">
+        <?php if (isset($_SESSION['user'])): ?>
+          <button class="voteUp" type="button" name="up" data-dir="1" value="<?php echo $post['post_id']?>"><i class="material-icons">exposure_plus_1</i></button>
+          <p class="sum"> <?php echo " ".$post['score']?> </p>
+          <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">exposure_neg_1</i></button>
+        <?php endif; ?>
+
+        <!-- SUMMAN AV VOTESEN SKA HIT -->
       </div>
       </article>
     <?php endforeach; ?>
