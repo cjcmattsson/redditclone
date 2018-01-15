@@ -12,6 +12,10 @@ $post = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
+<div class="page-padding-top">
+  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
+
+
 <?php if (isset($_SESSION['user'])): ?>
   <div class="col-sm-8 p-0 pt-4">
     <!-- SENDING POST_ID through $_GET see editPostLogic.php?id=.... -->
@@ -34,5 +38,8 @@ $post = $statement->fetch(PDO::FETCH_ASSOC);
   </div>
 <?php endif; ?>
 
+
+
+</div>
 
 <?php require __DIR__.'/../views/footer.php'; ?>

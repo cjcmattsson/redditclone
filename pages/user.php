@@ -3,6 +3,11 @@ require __DIR__.'../../views/header.php';
 
 ?>
 
+<div class="page-padding-top">
+  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -27,16 +32,18 @@ require __DIR__.'../../views/header.php';
         <?php if ($_GET['id'] === $_SESSION['user']['id'] && isset($_SESSION['user'])): ?>
 
           <div class="dropdown show">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Settings
-            </a>
+      <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Settings
+      </a>
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="editImg.php">Change Avatar</a>
-              <a class="dropdown-item" href="editProfile.php">Edit Profile Info</a>
-              <a class="dropdown-item" href="editPassword.php">Change Password</a>
-            </div>
-          </div>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="editImg.php">Change Avatar</a>
+        <a class="dropdown-item" href="editProfile.php">Edit Profile Info</a>
+        <a class="dropdown-item" href="editPassword.php">Change Password</a>
+      </div>
+    </div>
+    <br>
+    <a class="text-white" href="/app/auth/logout.php"><button class="btn btn-primary">Logout</button></a>
         <?php endif; ?>
       <?php endif; ?>
     </div>
@@ -62,6 +69,7 @@ require __DIR__.'../../views/header.php';
         <?php endif; ?>
       </div>
     </div>
+  </div>
   </div>
 
   <?php require __DIR__.'../../views/footer.php'; ?>

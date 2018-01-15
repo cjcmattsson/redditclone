@@ -5,6 +5,7 @@ declare(strict_types=1);
 require __DIR__.'../../views/header.php';
 
 ?>
+<div class="page-padding-top">
 
 <article>
     <h1>Create Account</h1>
@@ -42,5 +43,8 @@ require __DIR__.'../../views/header.php';
     </form>
 
 </article>
+
+
+</div>
 
 <?php require __DIR__.'../../views/footer.php'; ?>

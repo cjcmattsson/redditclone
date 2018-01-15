@@ -6,6 +6,8 @@ require __DIR__.'../../views/header.php';
 
 ?>
 
+<div class="page-padding-top">
+
 <article>
     <h1>Login</h1>
 
@@ -30,5 +32,7 @@ require __DIR__.'../../views/header.php';
 
       <small class="form-text text-muted">Not a user yet? <a href="createForm.php">Create Account</a></small>
 </article>
+
+</div>
 
 <?php require __DIR__.'../../views/footer.php'; ?>

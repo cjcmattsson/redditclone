@@ -4,6 +4,9 @@ $post = onePost($pdo);
 $comments = comments($pdo);
 
 ?>
+<div class="page-padding-top">
+  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
+
 
 <div class="row">
   <div class="col-md-6">
@@ -46,11 +49,15 @@ $comments = comments($pdo);
           <button type="submit" class="btn btn-primary add">Submit Comment</button>
         </form>
       <?php endif; ?>
+        </article>
+    </div>
 
       <br>
 
+      <div class="col-md-6">
+        <h4>Comments</h4>
       <?php foreach ($comments as $comment): ?>
-
+        <article>
         <a href="user.php?id=<?php echo $comment['user_id'] ?>">
         <img class="profilePicPostsComment" src="
         <?php if(isset($comment['img'])): ?>
@@ -81,9 +88,10 @@ $comments = comments($pdo);
 
         <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
       <?php endforeach; ?>
+    </article>
+  </div>
 
 
-  </article>
   </div>
   </div>
 

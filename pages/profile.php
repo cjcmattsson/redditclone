@@ -3,6 +3,11 @@ require __DIR__.'../../views/header.php';
 
 ?>
 
+<div class="page-padding-top">
+  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -56,6 +61,7 @@ require __DIR__.'../../views/header.php';
         <div class="text">Write your first post here: <a href="createPost.php">Hello</a></div>
       </div>
 <?php endif; ?>
+</div>
 </div>
 </div>
 </div>

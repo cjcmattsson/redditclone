@@ -12,7 +12,8 @@ $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
-
+<div class="page-padding-top">
+  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
 <article>
 <form action="../app/auth/editUser.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -36,4 +37,5 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 </article>
 
+</div>
 <?php require __DIR__.'../../views/footer.php'; ?>

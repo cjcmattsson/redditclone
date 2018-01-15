@@ -1,5 +1,5 @@
 <?php if (isset($_SESSION['user'])): ?>
-  <div class="col-sm-8 p-0 pt-4">
+  <div class="col-sm-6 p-0 pt-4">
   <form action="../app/auth/newPost.php" method="post">
     <h2>New Post</h2>
     <div class="form-group">

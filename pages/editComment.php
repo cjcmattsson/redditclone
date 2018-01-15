@@ -13,6 +13,8 @@ $comment = $statement->fetch(PDO::FETCH_ASSOC);
 $post_id = $_POST['post_id'];
 
 ?>
+<div class="page-padding-top">
+  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
 
 <?php if (isset($_SESSION['user'])): ?>
   <div class="col-sm-8 p-0 pt-4">
@@ -32,5 +34,6 @@ $post_id = $_POST['post_id'];
   </div>
 <?php endif; ?>
 
+</div>
 
 <?php require __DIR__.'/../views/footer.php'; ?>
