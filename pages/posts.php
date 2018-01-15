@@ -53,14 +53,13 @@
 
         </p>
         <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
-        <p><i class="fa fa-user"></i> Link: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
+        <p><i class="fa fa-user"></i><a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
 
         <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button class="engage" type="button" name="button">Engage/Comment</button></a>
         <!-- VOTE SECTION!  -->
 
 
         <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
-        <?php if($i == 5) break; ?>
       </div>
       <div class="voteScore">
         <?php if (isset($_SESSION['user'])): ?>
@@ -68,6 +67,7 @@
           <p class="sum"> <?php echo " ".$post['score']?> </p>
           <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">exposure_neg_1</i></button>
         <?php endif; ?>
+        <?php if($i == 5) break; ?>
 
         <!-- SUMMAN AV VOTESEN SKA HIT -->
       </div>
@@ -126,7 +126,7 @@
 
         </p>
         <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
-        <p><i class="fa fa-user"></i> Link: <a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
+        <p><i class="fa fa-user"></i><a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
 
         <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button class="engage" type="button">Engage/Comment</button></a>
 
@@ -134,7 +134,6 @@
 
 
         <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
-        <?php if($i == 5) break; ?>
       </div>
       <div class="voteScore">
         <?php if (isset($_SESSION['user'])): ?>
@@ -142,6 +141,7 @@
           <p class="sum"> <?php echo " ".$post['score']?> </p>
           <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">exposure_neg_1</i></button>
         <?php endif; ?>
+        <?php if($i == 5) break; ?>
 
         <!-- SUMMAN AV VOTESEN SKA HIT -->
       </div>

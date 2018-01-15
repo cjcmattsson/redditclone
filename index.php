@@ -83,28 +83,31 @@
 
     <!-- THIS IS TO LOOP THROUGH THE ARRAY -->
     <div class="row featurette center-block all-posts-landing">
-        <div class="col-md-6" onclick="location.href='pages/onePost.php?id=<?php echo $post[0]['post_id'] ?>';">
+        <div class="col-md-6">
           <div class="col-md-12 post-landing">
             <img class="featurette-image img-fluid rand-post-img" src="<?php if(isset($post[0]['img'])): ?>
               <?php echo "../images/".$post[0]['img']; ?>
             <?php else: echo "../images/barack.jpg";?>
-            <?php endif; ?>" alt="Generic placeholder image"><h2 class="featurette-heading"> <?php echo $post[0]['title'] ?></h2>
+            <?php endif; ?>" alt="Generic placeholder image">
+            <h2 class="featurette-heading" onclick="location.href='pages/onePost.php?id=<?php echo $post[0]['post_id'] ?>';"> <?php echo $post[0]['title'] ?></h2>
             <p class="lead"><?php echo $post[0]['description'] ?></p>
             <a class="lead" href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post[0]['url'] ?></a>
             <small>Posted: <?php echo $post[0]['posttime'] ?></small>
+            <a href="pages/onePost.php?id=<?php echo $post[0]['post_id'] ?>"> <button class="engage" type="button" name="button">Engage/Comment</button></a>
           </div>
         </div>
 
-        <div class="col-md-6" onclick="location.href='pages/onePost.php?id=<?php echo $post[1]['post_id'] ?>';">
+        <div class="col-md-6">
           <div class="col-md-12 post-landing">
             <img class="featurette-image img-fluid rand-post-img" src="<?php if(isset($post[1]['img'])): ?>
               <?php echo "../images/".$post[1]['img']; ?>
             <?php else: echo "../images/barack.jpg";?>
             <?php endif; ?>" alt="Generic placeholder image">
-            <h2 class="featurette-heading"> <?php echo $post[1]['title'] ?></h2>
+            <h2 class="featurette-heading" onclick="location.href='pages/onePost.php?id=<?php echo $post[1]['post_id'] ?>';"> <?php echo $post[1]['title'] ?></h2>
             <p class="lead"><?php echo $post[1]['description'] ?></p>
             <a class="lead" href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post[1]['url'] ?></a>
             <small>Posted: <?php echo $post[1]['posttime'] ?></small>
+            <a href="pages/onePost.php?id=<?php echo $post[1]['post_id'] ?>"> <button class="engage" type="button" name="button">Engage/Comment</button></a>
           </div>
         </div>
     </div>

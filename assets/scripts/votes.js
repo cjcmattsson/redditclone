@@ -58,9 +58,13 @@ Array.from(voteUp).forEach(up => {
     })
     .then(voteSum => {
       console.log(voteSum);
-      const singleSum = up.parentElement.querySelector('.sum');
+      const singleSum = up.parentElement.querySelectorAll('.sum');
       console.log(up);
-      singleSum.textContent = `${voteSum.score}`;
+      Array.from(singleSum).forEach(oneSum => {
+      oneSum.textContent = `${voteSum.score}`;
+      oneSum.classList.add('green');
+      oneSum.classList.remove('red');
+    })
   })
 }, 100);
 });
@@ -81,9 +85,13 @@ Array.from(voteDown).forEach(down => {
     })
     .then(voteSum => {
       console.log(voteSum);
-      const singleSum = down.parentElement.querySelector('.sum');
+      const singleSum = down.parentElement.querySelectorAll('.sum');
       console.log(down);
-      singleSum.textContent = `${voteSum.score}`;
+      Array.from(singleSum).forEach(oneSum => {
+      oneSum.textContent = `${voteSum.score}`;
+      oneSum.classList.add('red');
+      oneSum.classList.remove('green');
+    })
   })
 }, 100);
 });
