@@ -1,7 +1,7 @@
 # OpFlip
 ## End-of-year 2017 assignment @ YRGO Göteborg
 
-<img src="https://gph.is/1hoxSis" alt="Star Wars is cool" width="100%">
+<img src="https://media.giphy.com/media/3qaUhLknPw6NW/giphy.gif" alt="Star Wars is cool" width="100%">
 
 > Vader: Obi-Wan never told you what happened to your father. <br />
 Luke: He told me enough! He told me you killed him! <br />
