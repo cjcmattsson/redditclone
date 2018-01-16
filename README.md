@@ -1,5 +1,6 @@
-# OpFlip
-## End-of-year 2017 assignment @ YRGO Göteborg
+# OpFlip - Where opinions are flipped!
+## Cyberlink
+### End-of-year 2017 assignment @ YRGO Göteborg
 
 <img src="https://media.giphy.com/media/3qaUhLknPw6NW/giphy.gif" alt="Star Wars is cool" width="100%">
 
@@ -7,10 +8,7 @@
 Well search no further - OpFlip is here!
 
 ## Assignment:
-- Create a memory game with 8-10 pairs
-- The cards should be positioned randomly before a new game start
-- The game must include a restart button that reorder the cards randomly, using Javascript and not through a page reload
-- The game should be programmed in HTML, CSS and Javascript, no libraries or other languages
+- Create a <a href="https://www.reddit.com/">reddit</a>
 - Have fun!
 
 
