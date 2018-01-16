@@ -8,7 +8,8 @@
 Well search no further - OpFlip is here!
 
 ## Assignment:
-- Create a <a href="https://www.reddit.com/">reddit</a>
+- Create a <a href="https://www.reddit.com/">reddit</a> clone
+- Users should be able to create and account with email/name/username/password, uppload an avatar, login, logout, create posts/links, edit uploaded content (profie-info and posted content) and upvote/downvote links
 - Have fun!
 
 
