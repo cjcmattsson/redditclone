@@ -26,9 +26,9 @@
                 <input type="url" class="form-control" name="url" placeholder="Link/URL">
               </div>
               <div class="buttons-post">
-              <button type="submit" class="btn btn-primary mb-3">Submit Post</button>
-              <button type="button" class="btn mb-3 exit-button">Cancel</button>
-            </div>
+                <button type="submit" class="btn btn-primary mb-3">Submit Post</button>
+                <button type="button" class="btn mb-3 exit-button">Cancel</button>
+              </div>
             </div>
 
           </form>
@@ -63,7 +63,7 @@
               </div>
               <div class="content-post">
 
-                <h2><a class="post-text" href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
+                <h3><a class="post-text" href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h3>
                 <p class="time-posts-name"><i class="fa fa-user"></i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
                   <small class="time-posts-name"> - <i class="fa fa-calendar"></i><?php echo $post['posttime'];?></small>
                   <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
@@ -119,9 +119,9 @@
               <input type="url" class="form-control" name="url" placeholder="Link/URL">
             </div>
             <div class="buttons-post">
-            <button type="submit" class="btn btn-primary mb-3">Submit Post</button>
-            <button type="button" class="btn mb-3 exit-button-2">Cancel</button>
-          </div>
+              <button type="submit" class="btn btn-primary mb-3">Submit Post</button>
+              <button type="button" class="btn mb-3 exit-button-2">Cancel</button>
+            </div>
           </div>
 
         </form>
@@ -131,7 +131,7 @@
 
         <?php $posts = postsShowTopRated($pdo)?>
 
-        <!-- THIS IS TO ONLY SHOW THE 5 LATEST -->
+
         <?php $i= 0; ?>
         <!-- THIS IS TO LOOP THROUGH THE ARRAY -->
         <?php foreach ($posts as $post): ?>
@@ -139,7 +139,6 @@
 
           <article class="feed-posts">
 
-            <!-- Link to where the creator of the post can edit the post if session is set -->
 
             <!-- Actual post content -->
             <div class="pic-post">
@@ -155,18 +154,17 @@
             </div>
             <div class="content-post">
 
-              <h2><a class="post-text" href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
+              <h3><a class="post-text" href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h3>
+
               <p class="time-posts-name"><i class="fa fa-user"></i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
                 <small class="time-posts-name"> - <i class="fa fa-calendar"></i><?php echo $post['posttime'];?></small>
                 <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>
                   <!-- SENDING POST_ID through $_GET see editPost.php?id=.... -->
                   <small class="form-text text-muted"><a href="editPost.php?id=<?php echo $post['post_id'] ?>">Edit Post</a></small>
                 <?php endif; ?>
-
               </p>
               <p class="lead"><i class="fa fa-user"></i><?php echo $post['description'] ?></p>
               <p><i class="fa fa-user"></i><a href="<?php echo $post['url'] ?>" target="_blank"><?php echo $post['url'] ?></a></p>
-
               <a href="onePost.php?id=<?php echo $post['post_id'] ?>"> <button class="engage" type="button">Engage/Comment</button></a>
 
               <!-- VOTE SECTION!  -->
@@ -190,7 +188,6 @@
     </div>
   </div>
 </div>
-
-
+</div>
 
 <?php require __DIR__.'/../views/footer.php'; ?>

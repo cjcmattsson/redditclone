@@ -4,11 +4,10 @@ require __DIR__.'../../views/header.php';
 ?>
 
 <div class="padding-top-small-page">
-  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
 
 
 
-<div class="container">
+<div class="container profile-container col-lg-10 col-md-12">
   <div class="row">
     <div class="col-md-6">
       <article class="userInfo text-center">
@@ -22,30 +21,23 @@ require __DIR__.'../../views/header.php';
             <?php else: echo "../images/barack.jpg";?>
 
           <?php endif; ?>" alt="">
+          <div class="white-profile">
+
           <h1><?php echo $info['username'];?></h1>
           <h4><?php echo $info['name'];?></h4>
           <br>
           <p><?php echo $info['biography'];?></p>
-          <p><?php echo $info['email'];?></p>
+          <p>email: <?php echo $info['email'];?></p>
+        </div>
         <?php endforeach; ?>
-      </article>
-      <div class="dropdown show text-center">
-  <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Settings
-  </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="editImg.php">Change Avatar</a>
-    <a class="dropdown-item" href="editProfile.php">Edit Profile Info</a>
-    <a class="dropdown-item" href="editPassword.php">Change Password</a>
-  </div>
-</div>
-<br>
+</article>
+
     </div>
 
 
-<div class="col-md-6 userInfo">
-  <h2>Activity Feed</h2>
+<div class="col-md-6 userInfo activity-feed">
+  <h2 class="">Activity Feed</h2>
   <div class="activity-feed">
   <?php $posts = userPosts($pdo)?>
   <?php if (count($posts)): ?>
@@ -61,9 +53,21 @@ require __DIR__.'../../views/header.php';
       </div>
 <?php endif; ?>
 </div>
+</div>
+</div>
+<div class="dropdown show text-left">
+<a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Settings
+</a>
+
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+<a class="dropdown-item" href="editImg.php">Change Avatar</a>
+<a class="dropdown-item" href="editProfile.php">Edit Profile Info</a>
+<a class="dropdown-item" href="editPassword.php">Change Password</a>
+</div>
+</div>
+<br>
 <a class="text-white text-center" href="/app/auth/logout.php"><button class="btn btn-primary text-center">Logout</button></a>
-</div>
-</div>
 </div>
 
 <?php require __DIR__.'../../views/footer.php'; ?>

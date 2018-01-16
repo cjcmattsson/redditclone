@@ -1,8 +1,8 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
-
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <h1 class="logo text-center green mb-4" style="text-shadow: -1px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;">OpFlip - Where opinions are flipped</h1>
+  <hr>
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -83,7 +83,7 @@
 
     <!-- THIS IS TO LOOP THROUGH THE ARRAY -->
     <div class="row featurette center-block all-posts-landing">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-2">
           <div class="col-md-12 post-landing">
             <img class="featurette-image img-fluid rand-post-img" src="<?php if(isset($post[0]['img'])): ?>
               <?php echo "../images/".$post[0]['img']; ?>
@@ -97,7 +97,7 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 mb-2">
           <div class="col-md-12 post-landing">
             <img class="featurette-image img-fluid rand-post-img" src="<?php if(isset($post[1]['img'])): ?>
               <?php echo "../images/".$post[1]['img']; ?>

@@ -4,14 +4,13 @@ require __DIR__.'../../views/header.php';
 ?>
 
 <div class="padding-top-small-page">
-  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
 
 
 
-<div class="container">
+<div class="container profile-container col-lg-10 col-md-12">
   <div class="row">
     <div class="col-md-6 text-center">
-      <article>
+      <article class="userInfo text-center">
         <!-- If user hasent chosen an img, a standard image will show -->
 
         <?php $userInfos = otherUser($pdo)?>
@@ -22,9 +21,13 @@ require __DIR__.'../../views/header.php';
           <?php else: echo "../images/barack.jpg";?>
 
           <?php endif; ?>" alt="">
+          <div class="white-profile">
+
           <h1><?php echo $info['name'];?></h1>
+          <h4><?php echo $info['username'];?></h4>
           <p><?php echo $info['biography'];?></p>
           <p><?php echo $info['email'];?></p>
+          </div>
         <?php endforeach; ?>
       </article>
       <!-- IF USER PRESSES HIS OWN NAME IN POSTS, HE CAN ACCES THE SAME AS WHEN PRESSING "PROFILE" -->
@@ -49,10 +52,9 @@ require __DIR__.'../../views/header.php';
     </div>
 
 
-    <div class="col-md-6 text-center">
+    <div class="col-md-6 userInfo activity-feed">
       <h2>Activity Feed</h2>
       <div class="activity-feed">
-        <?php if (isset($_SESSION['user']) && $_GET['id'] === $_SESSION['user']['id']): ?>
         <?php $posts = otherUserPosts($pdo)?>
         <?php if (count($posts)): ?>
           <?php foreach ($posts as $post): ?>
@@ -62,11 +64,15 @@ require __DIR__.'../../views/header.php';
             </div>
           <?php endforeach; ?>
         <?php else: ?>
+          <?php if (isset($_SESSION['user']) && $_GET['id'] === $_SESSION['user']['id']): ?>
           <div class="feed-item">
             <div class="text">Write your first post here: <a href="createPost.php">Hello</a></div>
           </div>
+            <?php else: ?>
+                <h4>Nothing post yet</h4>
         <?php endif; ?>
         <?php endif; ?>
+
       </div>
     </div>
   </div>
