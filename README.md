@@ -3,12 +3,8 @@
 
 <img src="https://media.giphy.com/media/3qaUhLknPw6NW/giphy.gif" alt="Star Wars is cool" width="100%">
 
-> Vader: Obi-Wan never told you what happened to your father. <br />
-Luke: He told me enough! He told me you killed him! <br />
-Vader: No. I am your father. <br />
-Luke: [shocked] No. No! That's not true! That's impossible! <br />
-Vader: Search your feelings; you know it to be true! <br />
-Luke: NOOOOOOO! NOOOOOOOO!!!
+> Arguing on the internet is one of the worlds most ancient and fine arts. But, most of us just haven't found that perfect place to let the people of the world know how wrong they are about all kinds of matters.
+Well search no further - OpFlip is here!
 
 ## Assignment:
 - Create a memory game with 8-10 pairs
