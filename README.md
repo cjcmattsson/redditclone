@@ -1,5 +1,5 @@
 # OpFlip - Where opinions are flipped!
-## Cyberlink
+## Cyberlink-project
 ### End-of-year 2017 assignment @ YRGO Göteborg
 
 <img src="https://media.giphy.com/media/3qaUhLknPw6NW/giphy.gif" alt="Star Wars is cool" width="100%">
