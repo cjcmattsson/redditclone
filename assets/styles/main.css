@@ -14,6 +14,14 @@ body {
   background-color: white;
 }
 
+.green {
+  color: rgb(57, 164, 129)!important;
+}
+
+.red {
+  color: rgb(226, 81, 81)!important;
+}
+
 .text-shadow {
   text-shadow: -1px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
@@ -58,10 +66,9 @@ body {
 
 .form-header {
   color: rgb(57, 164, 129);
-
 }
 
-/* NAVBAR */
+/* NAVBAR STYLING*/
 
 .navbar-toggler-icon {
   color: white!important;
@@ -165,15 +172,26 @@ body {
   margin-right: 5px;
 }
 
-/* LANDING PAGE! */
+/* LANDING PAGE STYLING*/
 
 /* CAROUSEL LANDING PAGE */
+
+img.d-block {
+  max-width: 180%;
+  background-size: contain;
+}
+
+.quote {
+  position: absolute;
+  left: 0;
+  text-align:center;
+  width: 100%
+}
 
 #myCarousel {
   padding-top: 80px;
   margin-bottom: 5vh;
 }
-
 
 .first-slide, .second-slide, .third-slide {
   background-position: center;
@@ -206,7 +224,7 @@ body {
   color: white;
 }
 
-/* RANDOM USERS LANDING PAGE */
+/* RANDOM USERS LANDING PAGE STYLING*/
 
 .feat-prof {
   height: 200px;
@@ -251,8 +269,7 @@ body {
   border-color: rgb(62, 180, 141);
 }
 
-/* RANDOM POST LANDING PAGE */
-
+/* RANDOM POST LANDING PAGE STYLING */
 
 .post-landing {
   height: 100%;
@@ -303,7 +320,12 @@ body {
   width: 50px;
 }
 
-/*  PAGE INFO */
+/* PROFILE PAGE/OTHER USERS STYLING*/
+
+.feed-item:after {
+  border-color: green!important;
+  border-width: 2px!important;
+}
 
 .white-profile {
   background-color: white;
@@ -357,7 +379,7 @@ body {
   color: white;
 }
 
-/* CHANGE PROFILE IMAGE */
+/* CHANGE PROFILE IMAGE STYLING*/
 .file-requirements {
   font-style: italic;
   font-size: small;
@@ -367,7 +389,7 @@ body {
   margin-bottom: 0;
 }
 
-/* POSTS PAGE */
+/* POSTS PAGE STYLING*/
 
 .post-page-form {
   margin: auto!important;
@@ -587,14 +609,6 @@ body {
   margin: auto;
 }
 
-.green {
-  color: rgb(57, 164, 129)!important;
-}
-
-.red {
-  color: rgb(226, 81, 81)!important;
-}
-
 .sum {
   font-weight: bold;
   font-size: 30px;
@@ -645,7 +659,7 @@ body {
   box-shadow: none;
 }
 
-/* ONE POST */
+/* ONE POST PAGE STYLING*/
 
 .comment-profpic {
   height: 100%;
@@ -687,8 +701,6 @@ body {
   font-size: 10px;
 }
 
-
-
 .page-back {
   color: rgb(57, 164, 129);
   border: 0;
@@ -713,21 +725,4 @@ body {
 
 .topRatedPosts:focus {
   outline: none!important;
-}
-
-img.d-block {
-  max-width: 180%;
-  background-size: contain;
-}
-
-.quote {
-  position: absolute;
-  left: 0;
-  text-align:center;
-  width: 100%
-}
-
-.feed-item:after {
-  border-color: green!important;
-  border-width: 2px!important;
 }

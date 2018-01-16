@@ -1,21 +1,23 @@
 <?php require __DIR__.'../../views/header.php';?>
 
-<div class="page-padding-top">
+<div class="padding-top-small-page">
 
-<form action="../app/auth/editUser.php" method="post" enctype="multipart/form-data">
-  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
-  <div class="form-group">
-    <label for="password">Change Password</label>
-    <input class="form-control password" type="text" maxlength="30" name="password" placeholder="...keep it safe...keep it hidden" required>
-  </div><!-- /form-group -->
+<div class="col-md-6 mx-auto text-center">
+
+  <form action="../app/auth/editUser.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="password"><h2>Change Password</h2></label>
+      <input class="form-control password" type="text" maxlength="30" name="password" placeholder="...keep it safe...keep it hidden" required>
+    </div><!-- /form-group -->
 
 
-  <button type="submit" class="btn btn-primary">Save Changes</button>
-</form>
-<br>
-<form action="profile.php" method="post">
-  <button type="submit" class="btn btn-primary">Cancel</button>
-</form>
+    <button type="submit" class="btn btn-block general-button">Save Changes</button>
+  </form>
+  <br>
+  <form action="profile.php" method="post">
+    <button type="submit" class="btn btn-block exit-button">Cancel</button>
+  </form>
+</div>
 
 
 </div>

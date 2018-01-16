@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
 
+// Code inserts value of comment into comment-table
+
 if (isset($_POST['comment'])) {
   $comment = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
 
@@ -13,7 +15,7 @@ if (isset($_POST['comment'])) {
 
 
   $query = 'INSERT INTO comments (post_id, user_id, comment_text, posttime)
-            VALUES (:post_id, :user_id, :comment_text, :posttime)';
+  VALUES (:post_id, :user_id, :comment_text, :posttime)';
 
   $statement = $pdo->prepare($query);
 

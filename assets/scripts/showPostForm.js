@@ -1,3 +1,7 @@
+// Code to show the "create post"-form if the user focuses/press
+// the input-field above the post-feed.
+
+
 // RECENT
 const showPostForm = document.querySelector('.show-hidden');
 const showForm = document.querySelector('.show-form');

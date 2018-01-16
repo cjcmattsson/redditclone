@@ -1,3 +1,5 @@
+// Code to show the user what page they are currently on in the navbar
+
 const home = document.querySelector('.home');
 const posts = document.querySelector('.posts');
 const about = document.querySelector('.about');

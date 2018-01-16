@@ -26,7 +26,7 @@ $comments = comments($pdo);
       </div>
       <div class="">
 
-        <h2><a class="post-text" href="onePost.php?id=<?php echo $post['post_id'] ?>"><?php echo $post['title'];?></a></h2>
+        <h2><?php echo $post['title'];?></h2>
         <p class="time-posts-name"><i class="fa fa-user"></i><a href="user.php?id=<?php echo $post['user_id'] ?>"><?php echo $post['username'] ?></a>
           <small class="time-posts-name"> - <i class="fa fa-calendar"></i><?php echo $post['posttime'];?></small>
           <?php if (isset($_SESSION['user']) && $post['username'] === $_SESSION['user']['username']): ?>

@@ -1,12 +1,16 @@
 <?php
 declare(strict_types=1);
-// Always start by loading the default application setup.
+
 require __DIR__.'/../autoload.php';
+
+// Code to search for specific username and tell user if username is already taken
+// and letting the user know so through a js fetch. returns json-code
+
 $name = $_GET['username'];
-// Wildcard below
-// ."%";
+
+
 $searchUser = "SELECT username FROM users
-               WHERE username= :username";
+WHERE username= :username";
 $statement = $pdo->prepare($searchUser);
 $statement->bindParam(':username', $name, PDO::PARAM_STR);
 $statement->execute();

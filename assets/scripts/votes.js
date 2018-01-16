@@ -1,4 +1,6 @@
-'use strict';
+// Code to regarding the vote-functions.
+// Makes the user able to see result of their vote straight away
+
 
 const voteUp = document.querySelectorAll('.voteUp');
 const voteDown = document.querySelectorAll('.voteDown');
@@ -21,7 +23,6 @@ Array.from(voteUp).forEach(up => {
     .then(response => {
       return response.json()
     });
-    console.log("hej");
   })
 });
 
@@ -37,7 +38,6 @@ Array.from(voteDown).forEach(down => {
     .then(response => {
       return response.json()
     });
-    console.log("då");
   })
 });
 
@@ -57,9 +57,7 @@ Array.from(voteUp).forEach(up => {
       return response.json()
     })
     .then(voteSum => {
-      console.log(voteSum);
       const singleSum = up.parentElement.querySelectorAll('.sum');
-      console.log(up);
       Array.from(singleSum).forEach(oneSum => {
       oneSum.textContent = `${voteSum.score}`;
       oneSum.classList.add('green');
@@ -84,9 +82,7 @@ Array.from(voteDown).forEach(down => {
       return response.json()
     })
     .then(voteSum => {
-      console.log(voteSum);
       const singleSum = down.parentElement.querySelectorAll('.sum');
-      console.log(down);
       Array.from(singleSum).forEach(oneSum => {
       oneSum.textContent = `${voteSum.score}`;
       oneSum.classList.add('red');

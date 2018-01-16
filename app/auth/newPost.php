@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
 
+// Code to insert info user has entered into form when creating a new posts
+// into posts-database
+
 if (isset($_POST['title'], $_POST['description'], $_POST['url'])) {
   $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
   $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
@@ -13,7 +16,7 @@ if (isset($_POST['title'], $_POST['description'], $_POST['url'])) {
 
 
   $query = 'INSERT INTO posts (user_id, title, description, url, posttime)
-            VALUES (:id, :title, :description, :url, :posttime)';
+  VALUES (:id, :title, :description, :url, :posttime)';
 
   $statement = $pdo->prepare($query);
 

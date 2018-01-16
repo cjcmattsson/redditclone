@@ -1,3 +1,6 @@
+// Code to show either the post as of latest Posted
+// or as of highest rating/vote-score
+
 const showLatestPosts = document.querySelector('.latestPosts');
 const showTopRatedPosts = document.querySelector('.topRatedPosts');
 

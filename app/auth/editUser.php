@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
 
+// Code for a user to edit ones profile-info and avatar
+
 // CHANGE PROFILE PIC
 if (isset($_FILES['img'])) {
   // Giving the uploaded img the username + the extension of the file

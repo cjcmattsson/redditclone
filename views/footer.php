@@ -1,3 +1,6 @@
+<!-- The footer part of all pages -->
+<!-- Contains all javascript-files, some only active on certain pages -->
+
 <hr class="featurette-divider">
 <!-- FOOTER -->
 <footer class="container">

@@ -1,3 +1,6 @@
+<!-- Navigation-section used on all pages -->
+
+
   <nav class="navbar navbar-expand-lg fixed-top navbar-light nav-color">
     <a class="navbar-brand text-white logo logo-navbar mr-4 text-shadow" href="/"><?php echo $config['title']; ?></a>
     <button class="navbar-toggler hamburger pb-0" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +19,10 @@
         <li class="nav-item mr-2">
             <a class="nav-link about text-shadow" href="/pages/about.php">About</a>
         </li><!-- /nav-item -->
+
+        <!-- If user is logged in, show profile-button -->
+        <!-- If user is not logged in, show login and create user-buttons -->
+
         <?php if (isset($_SESSION['user'])): ?>
         <li class="nav-item mr-2">
           <a class="nav-link post-op text-shadow" href="/pages/createPost.php">Create Post</a>

@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
 
+// Code to see if the info user is posting in
+// login-page exists in database and that the info matches
+
 if (isset($_POST['username'], $_POST['password'])) {
   $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
   $password = $_POST['password'];

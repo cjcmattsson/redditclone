@@ -1,5 +1,6 @@
+/* Styling for the Activity Feed part of all users profile-page */
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-/* apply a natural box layout model to all elements, but allowing components to change */
 
 .activity-feed {
   padding: 15px;
@@ -23,7 +24,7 @@
   height: 10px;
   border-radius: 6px;
   background: #fff;
-  border: 1px solid #f37167;
+  border: 1px solid;
 }
 .activity-feed .feed-item .date {
   position: relative;

@@ -3,21 +3,23 @@
 declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
+
+// Code to delete comments
+
 // GETTING THE ID FROM URL-BAR THAT WAS SENT FROM FORM ON editPost.php
-  $comment_id = $_GET['id'];
-  $post_id = $_POST['post_id'];
+$comment_id = $_GET['id'];
+$post_id = $_POST['post_id'];
 
-  $query = 'DELETE FROM comments WHERE comment_id=:comment_id';
+$query = 'DELETE FROM comments WHERE comment_id=:comment_id';
 
 
-  $statement = $pdo->prepare($query);
+$statement = $pdo->prepare($query);
 
-  if (!$statement) {
-    die(var_dump($pdo->errorInfo()));
-  }
+if (!$statement) {
+  die(var_dump($pdo->errorInfo()));
+}
 
-  $statement->bindParam(':comment_id', $comment_id, PDO::PARAM_INT);
+$statement->bindParam(':comment_id', $comment_id, PDO::PARAM_INT);
+$statement->execute();
 
-  $statement->execute();
-
-  redirect("../../pages/onePost.php?id=$post_id");
+redirect("../../pages/onePost.php?id=$post_id");
