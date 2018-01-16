@@ -39,7 +39,7 @@ require __DIR__.'../../views/header.php';
         </div><!-- /form-group -->
 
 
-        <button type="submit" class="btn btn-block general-button">Create Account</button>
+        <button type="submit" class="btn btn-block general-button create-account-button">Create Account</button>
     </form>
 
 </article>

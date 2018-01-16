@@ -1,6 +1,7 @@
 'use strict';
 const usernameField = document.querySelector('.usernameField');
 const alreadyExists = document.querySelector('.alreadyExists');
+const button = document.querySelector('.create-account-button');
 
 
 let usernameSearch = () => {
@@ -14,10 +15,12 @@ let usernameSearch = () => {
     console.log(response);
     if (response.length && searchUser.toLowerCase() === response[0].username.toLowerCase()) {
       console.log("if");
-      alreadyExists.textContent = "That name is taken!"
+      alreadyExists.textContent = "That name is taken!";
+      button.disabled = true;
     } else {
       console.log("else");
       alreadyExists.textContent = ""
+      button.disabled = false;
     }
   })
 }
