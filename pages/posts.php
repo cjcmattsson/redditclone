@@ -18,7 +18,7 @@
         <div class="col-sm-6 p-0 mx-auto">
           <form class="post-page-form" action="../app/auth/newPost.php" method="post" required>
             <div class="form-group">
-              <input type="text" class="form-control show-hidden" name="title" placeholder="Got somethin on ya mind?" maxlength="35" required>
+              <input type="text" class="form-control show-hidden" name="title" placeholder="Speak up! Press me - create post!" maxlength="35" required>
             </div>
             <div class="show-form">
               <div class="form-group">
@@ -113,7 +113,7 @@
       <div class="col-sm-6 p-0 mx-auto">
         <form class="post-page-form-2" action="../app/auth/newPost.php" method="post">
           <div class="form-group">
-            <input type="text" class="form-control show-hidden-2" name="title" placeholder="Got somethin on ya mind?" maxlength="35">
+            <input type="text" class="form-control show-hidden-2" name="title" placeholder="Speak up! Press me - create post!" maxlength="35">
           </div>
           <div class="show-form-2">
             <div class="form-group">
