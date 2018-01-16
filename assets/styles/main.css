@@ -1,5 +1,12 @@
 /* GENERAL STYLING */
 
+* {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
 body {
   background-color: #E6ECF0;
 }
@@ -516,6 +523,10 @@ body {
 
 .post-text {
   color: black!important;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 .post-text:hover {
   text-decoration: none;
@@ -547,7 +558,10 @@ body {
 }
 
 .content-post {
-  word-break: normal;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   width: 60%;
   padding: 10px 0;
   display: flex;
@@ -648,7 +662,10 @@ body {
   width: 100%;
   display: flex;
   flex-flow: row;
-
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   background-color: #F5F8FA;
   margin-bottom: 10px;
 }

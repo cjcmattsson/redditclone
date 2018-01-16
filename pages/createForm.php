@@ -13,12 +13,12 @@ require __DIR__.'../../views/header.php';
     <form action="../app/auth/create.php" method="post">
         <div class="form-group">
             <label for="name">Name</label>
-            <input class="form-control" type="text" name="name" placeholder="Kurt Wallander" required>
+            <input class="form-control" type="text" name="name" maxlength="30" placeholder="Kurt Wallander" required>
         </div><!-- /form-group -->
 
         <div class="form-group">
             <label for="username">Username</label> <label class="alreadyExists text-danger small"></label>
-            <input class="form-control usernameField" type="text" name="username" placeholder="Coolkid92" required>
+            <input class="form-control usernameField" type="text" maxlength="25" name="username" placeholder="Coolkid92" required>
 
         </div><!-- /form-group -->
 
@@ -29,12 +29,12 @@ require __DIR__.'../../views/header.php';
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" placeholder="kurt@wallander.com" required>
+            <input class="form-control" type="email" maxlength="45" name="email" placeholder="kurt@wallander.com" required>
         </div><!-- /form-group -->
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control password" type="password" name="password" placeholder="**********" required>
+            <input class="form-control password" type="password" maxlength="30" name="password" placeholder="**********" required>
             <input class="togglePassword" type="checkbox"> Show Password
         </div><!-- /form-group -->
 
