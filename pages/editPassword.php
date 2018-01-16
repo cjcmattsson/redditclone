@@ -6,7 +6,7 @@
   <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
   <div class="form-group">
     <label for="password">Change Password</label>
-    <input class="form-control password" type="text" name="password" placeholder="...keep it safe...keep it hidden" required>
+    <input class="form-control password" type="text" maxlength="30" name="password" placeholder="...keep it safe...keep it hidden" required>
   </div><!-- /form-group -->
 
 

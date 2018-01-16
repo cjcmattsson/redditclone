@@ -24,7 +24,7 @@ require __DIR__.'../../views/header.php';
 
         <div class="form-group">
           <label for="biography">Biography</label>
-          <textarea class="form-control" type="text" maxlength="200" name="biography" placeholder="I'm a graphic designer that loves to..." required></textarea>
+          <textarea class="form-control noresize" type="text" maxlength="200" name="biography" placeholder="I'm a graphic designer that loves to..." required></textarea>
         </div><!-- /form-group -->
 
         <div class="form-group">

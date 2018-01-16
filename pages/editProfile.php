@@ -24,7 +24,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" value="<?php echo $user['email']?>" required>
+            <input class="form-control" type="email" maxlength="45" name="email" value="<?php echo $user['email']?>" required>
         </div><!-- /form-group -->
 
 
