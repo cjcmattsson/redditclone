@@ -9,41 +9,48 @@ Well search no further - OpFlip is here!
 
 ## Assignment:
 - Create a <a href="https://www.reddit.com/">reddit</a> clone
-- Users should be able to create and account with email/name/username/password, uppload an avatar, login, logout, create posts/links, edit uploaded content (profie-info and posted content) and upvote/downvote links
+- Users should be able to create and account with email, name, biography & password as well as uppload an avatar
+- Users should be able to login and logout
+- Users should be able to create posts/links, upvote/downvote links & delete links
+- Users should be able to edit uploaded content (profile-info and links)
 - Have fun!
 
 
-## My project
-The theme of the game should need no introduction
+## My project - OpFlip
+OpFlip is a place where people can come together over not coming together. No place is better for argumantation and making people change their minds on various issues than the internet, and OpFlip is the place to do this.
+
+
+### The rules of OpFlip
+- Dont be mean. Or at least not TOO mean
+- Never give up on your arguments. They are wrong, you are right. You know this
+- Tell your friends about your new favourite site
 
 
 ## To view project on your computer
 - Clone/download repository from GitHub
-- Open the directory you just cloned
-- Open directory called "memory"
-- Open index.html file in your browser of choice
-
-If you don't want do download entire repository, visit following link:
-- https://cjcmattsson.github.io/memory
-
+- Download/open MAMP
+- Go to Preferences in MAMP and set Web Server (root directory) to the folder you just downloaded
+- Press "Start Servers" in MAMP
+- Open the index.php-file by typing localhost:8888 in your browser of choice
 - Enjoy responsibly
 
-
-## The rules of the game
-- Put your volume on a REASONABLE level. Not to low, but maybe not to high either.. (If you REALLY hate music, turn your volume off)
-- Read the very important text that tells whats at stake when the page is loaded
-- Find the 8 pairs before the time runs out! You'll have 45 seconds to do this
-- Bonus: Try to do this in as few clicks as possible!
-- Tell your friends about your new favourite game
 
 ### Written in:
 - HTML
 - CSS
 - Javascript
+- PHP
+- Bootstrap
 
-### Author:
+### Creators:
 - Christopher Mattsson
+- Älon Musk
+- Jeff Bezös
 
 ### Tested by:
-- Gabriel Aanesen
-- Sebastian Palm
+- André Robsahm
+- Henrik Bielsten
+- Kristian Liljander Kurki
+
+### Final notes:
+- OpFlip is a joke. People are generally not changing their minds due to internet argumantation. The creators of OpFlip are well aware of this and are therefore using this fact as a "fun" theme for the site. 
