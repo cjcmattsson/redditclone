@@ -18,7 +18,7 @@ require __DIR__.'../../views/header.php';
 
         <div class="form-group">
             <label for="username">Username</label> <label class="alreadyExists text-danger small"></label>
-            <input class="form-control usernameField" type="text" maxlength="25" name="username" placeholder="Coolkid92" required>
+            <input class="form-control usernameField" type="text" maxlength="12" name="username" placeholder="Coolkid92" required>
 
         </div><!-- /form-group -->
 
