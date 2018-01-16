@@ -4,8 +4,7 @@ $post = onePost($pdo);
 $comments = comments($pdo);
 
 ?>
-<div class="page-padding-top">
-  <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
+<div class="padding-top-small-page">
   <div class="row">
 
 

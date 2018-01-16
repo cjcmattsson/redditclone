@@ -13,6 +13,8 @@
     <hr>
     <div class="row">
       <div class="col-md-12">
+
+        <?php if (isset($_SESSION['user'])): ?>
         <div class="col-sm-6 p-0 mx-auto">
           <form class="post-page-form" action="../app/auth/newPost.php" method="post" required>
             <div class="form-group">
@@ -33,6 +35,7 @@
 
           </form>
         </div>
+        <?php endif; ?>
         <!-- If user hasent chosen an img, a standard image will show -->
         <div class="all-posts-container">
 
@@ -106,6 +109,7 @@
   <hr>
   <div class="row">
     <div class="col-md-12">
+      <?php if (isset($_SESSION['user'])): ?>
       <div class="col-sm-6 p-0 mx-auto">
         <form class="post-page-form-2" action="../app/auth/newPost.php" method="post">
           <div class="form-group">
@@ -126,6 +130,7 @@
 
         </form>
       </div>
+      <?php endif; ?>
       <div class="all-posts-container">
 
 
