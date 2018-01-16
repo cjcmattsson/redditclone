@@ -7,8 +7,8 @@ require __DIR__.'../../views/header.php';
 ?>
 <div class="page-padding-top">
 
-<article>
-    <h1>Create Account</h1>
+<article class="col-lg-6 col-md-8 py-4 px-4 mb-5 mx-auto create-form">
+    <h1 class="logo form-header text-center">We're glad to have you!</h1>
 
     <form action="../app/auth/create.php" method="post">
         <div class="form-group">
@@ -39,7 +39,7 @@ require __DIR__.'../../views/header.php';
         </div><!-- /form-group -->
 
 
-        <button type="submit" class="btn btn-primary">Create Account</button>
+        <button type="submit" class="btn btn-block general-button">Create Account</button>
     </form>
 
 </article>

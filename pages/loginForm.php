@@ -8,23 +8,21 @@ require __DIR__.'../../views/header.php';
 
 <div class="page-padding-top">
 
-<article>
-    <h1>Login</h1>
+<article class="col-lg-5 col-md-8 py-4 px-4 mx-auto login-form">
+    <h1 class="logo mx-auto text-center mb-3 form-header">Enter OpFlip</h1>
 
     <form action="../app/auth/login.php" method="post">
         <div class="form-group">
             <label for="email">Username</label>
             <input class="form-control" type="text" name="username" placeholder="Coolkid92" required>
-            <small class="form-text text-muted">Enter your email address</small>
         </div><!-- /form-group -->
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" required>
-            <small class="form-text text-muted">Very secret, uncrackable password goes here</small>
+            <input class="form-control" type="password" name="password" placeholder="Secrets.." required>
         </div><!-- /form-group -->
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-block general-button mb-3">Login</button>
 
 
 
