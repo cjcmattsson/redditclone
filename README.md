@@ -9,20 +9,20 @@ Well search no further - OpFlip is here!
 
 ## Assignment:
 - Create a <a href="https://www.reddit.com/">reddit</a> clone
-- Users should be able to create and account with email, name, biography & password as well as uppload an avatar
+- Users should be able to create an account with email, name, biography & password as well as uppload an avatar
 - Users should be able to login and logout
-- Users should be able to create posts/links, upvote/downvote links & delete links
+- Users should be able to create posts/links, upvote/downvote links & delete their own links
 - Users should be able to edit uploaded content (profile-info and links)
 - Have fun!
 
 
 ## My project - OpFlip
-OpFlip is a place where people can come together over not coming together. No place is better for argumantation and making people change their minds on various issues than the internet, and OpFlip is the place to do this.
+OpFlip is a place where people can come together to not agree with each other and argue irrationally. No place is better for argumantation and making people change their minds on various issues than the internet, and OpFlip is where you shold do this.
 
 
 ### The rules of OpFlip
 - Dont be mean. Or at least not TOO mean
-- Never give up on your arguments. They are wrong, you are right. You know this
+- Never give up on your arguments. The others are wrong, you are right. You know this
 - Tell your friends about your new favourite site
 
 
