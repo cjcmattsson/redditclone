@@ -1,6 +1,6 @@
 <?php require __DIR__.'/../views/header.php'; ?>
 
-<div class="page-padding-top">
+<div class="padding-top-small-page">
 
 
   <article>

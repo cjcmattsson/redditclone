@@ -3,7 +3,7 @@ require __DIR__.'../../views/header.php';
 
 ?>
 
-<div class="page-padding-top">
+<div class="padding-top-small-page">
   <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
 
 
@@ -11,7 +11,7 @@ require __DIR__.'../../views/header.php';
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <article class="userInfo">
+      <article class="userInfo text-center">
         <!-- If user hasent chosen an img, a standard image will show -->
 
         <?php $infos = userInfo($pdo)?>
@@ -29,7 +29,7 @@ require __DIR__.'../../views/header.php';
           <p><?php echo $info['email'];?></p>
         <?php endforeach; ?>
       </article>
-      <div class="dropdown show">
+      <div class="dropdown show text-center">
   <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Settings
   </a>
@@ -41,7 +41,6 @@ require __DIR__.'../../views/header.php';
   </div>
 </div>
 <br>
-<a class="text-white" href="/app/auth/logout.php"><button class="btn btn-primary">Logout</button></a>
     </div>
 
 
@@ -62,6 +61,7 @@ require __DIR__.'../../views/header.php';
       </div>
 <?php endif; ?>
 </div>
+<a class="text-white text-center" href="/app/auth/logout.php"><button class="btn btn-primary text-center">Logout</button></a>
 </div>
 </div>
 </div>

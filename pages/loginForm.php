@@ -6,7 +6,7 @@ require __DIR__.'../../views/header.php';
 
 ?>
 
-<div class="page-padding-top">
+<div class="padding-top-small-page">
 
 <article class="col-lg-5 col-md-8 py-4 px-4 mx-auto login-form">
     <h1 class="logo mx-auto text-center mb-3 form-header">Enter OpFlip</h1>

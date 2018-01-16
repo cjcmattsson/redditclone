@@ -1,7 +1,7 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-light nav-color">
     <a class="navbar-brand text-white logo logo-navbar mr-4" href="/"><?php echo $config['title']; ?></a>
-    <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler hamburger pb-0" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="material-icons" style="font-size:30px;">menu</i>
     </button>
 
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 require __DIR__.'../../views/header.php';
 
 ?>
-<div class="page-padding-top">
+<div class="padding-top-small-page">
 
 <article class="col-lg-6 col-md-8 py-4 px-4 mb-5 mx-auto create-form">
     <h1 class="logo form-header text-center">We're glad to have you!</h1>

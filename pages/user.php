@@ -3,14 +3,14 @@ require __DIR__.'../../views/header.php';
 
 ?>
 
-<div class="page-padding-top">
+<div class="padding-top-small-page">
   <button class="page-back" onclick="goBack()"><i class="material-icons">backspace</i></button>
 
 
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 text-center">
       <article>
         <!-- If user hasent chosen an img, a standard image will show -->
 
@@ -49,7 +49,7 @@ require __DIR__.'../../views/header.php';
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-6 text-center">
       <h2>Activity Feed</h2>
       <div class="activity-feed">
         <?php if (isset($_SESSION['user']) && $_GET['id'] === $_SESSION['user']['id']): ?>
@@ -69,6 +69,7 @@ require __DIR__.'../../views/header.php';
         <?php endif; ?>
       </div>
     </div>
+  </div>
   </div>
   </div>
 
