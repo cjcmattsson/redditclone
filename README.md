@@ -17,7 +17,7 @@ Well search no further - OpFlip is here!
 
 
 ## My project - OpFlip
-OpFlip is a place where people can come together to not agree with each other and argue irrationally. No place is better for argumantation and making people change their minds on various issues than the internet, and OpFlip is where you shold do this.
+OpFlip is a place where people can come together to not agree with each other and argue irrationally. No place is better for argumantation and making people change their minds on various issues than the internet, and OpFlip is where you should do this.
 
 
 ### The rules of OpFlip
