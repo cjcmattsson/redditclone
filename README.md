@@ -2,10 +2,10 @@
 ## Cyberlink-project
 ### End-of-year 2017 assignment @ YRGO Göteborg
 
-<img src="https://media.giphy.com/media/3qaUhLknPw6NW/giphy.gif" alt="Star Wars is cool" width="100%">
+<img src="https://media.giphy.com/media/3qaUhLknPw6NW/giphy.gif" alt="Angry man" width="100%">
 
 > Arguing on the internet is one of the worlds most ancient and fine arts. But, most of us just haven't found that perfect place to let the people of the world know how wrong they are about all kinds of matters.
-Well search no further - OpFlip is here!
+Well search no further - OpFlip is here! - Platon, Socrates & Aristoteles
 
 ## Assignment:
 - Create a <a href="https://www.reddit.com/">reddit</a> clone
@@ -53,4 +53,4 @@ OpFlip is a place where people can come together to not agree with each other an
 - Kristian Liljander Kurki
 
 ### Final notes:
-- OpFlip is a joke. People are generally not changing their minds due to internet argumantation. The creators of OpFlip are well aware of this and are therefore using this fact as a "fun" theme for the site. 
+- OpFlip is a joke. People are generally not changing their minds due to internet argumantation. The creators of OpFlip are well aware of this and are therefore using this fact as a "fun" theme for the site.
