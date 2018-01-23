@@ -17,7 +17,7 @@ Well search no further - OpFlip is here! - Platon, Socrates & Aristoteles
 
 
 ## My project - OpFlip
-OpFlip is a place where people can come together to not agree with each other and argue irrationally. No place is better for argumantation and making people change their minds on various issues than the internet, and OpFlip is where you shold do this.
+OpFlip is a place where people can come together to not agree with each other and argue irrationally. No place is better for argumantation and making people change their minds on various issues than the internet, and OpFlip is where you should do this.
 
 
 ### The rules of OpFlip
@@ -50,7 +50,6 @@ OpFlip is a place where people can come together to not agree with each other an
 ### Tested by:
 - André Robsahm
 - Henrik Bielsten
-- Kristian Liljander Kurki
 
 ### Final notes:
 - OpFlip is a joke. People are generally not changing their minds due to internet argumantation. The creators of OpFlip are well aware of this and are therefore using this fact as a "fun" theme for the site.
