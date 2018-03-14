@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is created by me. Hello!
+ *
+ * (c) Opflip AB, Christopher Mattsson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
@@ -16,7 +25,7 @@ $query = 'INSERT INTO votes (post_id, user_id, vote_dir) VALUES (:post_id, :id, 
 $statement = $pdo->prepare($query);
 
 if (!$statement) {
-  die(var_dump($pdo->errorInfo()));
+    die(var_dump($pdo->errorInfo()));
 }
 $statement->bindParam(':id', $id, PDO::PARAM_INT);
 $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);

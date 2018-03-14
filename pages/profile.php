@@ -16,7 +16,7 @@ require __DIR__.'../../views/header.php';
           <?php $infos = userInfo($pdo)?>
           <?php foreach ($infos as $info): ?>
             <img class="profilePic" src="
-            <?php if(isset($info['img'])): ?>
+            <?php if (isset($info['img'])): ?>
               <?php echo "../images/".$info['img']; ?>
             <?php else: echo "../images/barack.jpg";?>
 

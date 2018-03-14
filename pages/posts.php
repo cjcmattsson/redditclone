@@ -51,7 +51,7 @@
 
                 <a href="user.php?id=<?php echo $post['user_id'] ?>">
                   <img class="profilePicPosts" src="
-                  <?php if(isset($post['img'])): ?>
+                  <?php if (isset($post['img'])): ?>
                     <?php echo "../images/".$post['img']; ?>
                   <?php else: echo "../images/barack.jpg";?>
 
@@ -84,7 +84,9 @@
                   <p class="sum"> <?php echo " ".$post['score']?> </p>
                   <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">arrow_downward</i></button>
                 <?php endif; ?>
-                <?php if($i == 10) break; ?>
+                <?php if ($i == 10) {
+    break;
+} ?>
 
                 <!-- SUMMAN AV VOTESEN SKA HIT -->
               </div>
@@ -144,7 +146,7 @@
 
               <a href="user.php?id=<?php echo $post['user_id'] ?>">
                 <img class="profilePicPosts" src="
-                <?php if(isset($post['img'])): ?>
+                <?php if (isset($post['img'])): ?>
                   <?php echo "../images/".$post['img']; ?>
                 <?php else: echo "../images/barack.jpg";?>
 
@@ -177,7 +179,9 @@
                 <p class="sum"> <?php echo " ".$post['score']?> </p>
                 <button class="voteDown" type="button" name="down" data-dir="-1" value="<?php echo $post['post_id']?>"><i class="material-icons">arrow_downward</i></button>
               <?php endif; ?>
-              <?php if($i == 10) break; ?>
+              <?php if ($i == 10) {
+    break;
+} ?>
 
               <!-- SUMMAN AV VOTESEN SKA HIT -->
             </div>

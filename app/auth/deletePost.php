@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is created by me. Hello!
+ *
+ * (c) Opflip AB, Christopher Mattsson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
@@ -17,10 +26,10 @@ $statement1 = $pdo->prepare($query1);
 $statement2 = $pdo->prepare($query2);
 
 if (!$statement1) {
-  die(var_dump($pdo->errorInfo()));
+    die(var_dump($pdo->errorInfo()));
 }
 if (!$statement2) {
-  die(var_dump($pdo->errorInfo()));
+    die(var_dump($pdo->errorInfo()));
 }
 
 $statement1->bindParam(':post_id', $post_id, PDO::PARAM_INT);

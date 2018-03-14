@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is created by me. Hello!
+ *
+ * (c) Opflip AB, Christopher Mattsson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
@@ -8,8 +17,8 @@ require __DIR__.'/../autoload.php';
 // login-page exists in database and that the info matches
 
 if (isset($_POST['username'], $_POST['password'])) {
-  $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-  $password = $_POST['password'];
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = $_POST['password'];
     // Prepare, bind email parameter and execute the database query.
     $statement = $pdo->prepare('SELECT * FROM users WHERE username= :username');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
@@ -32,7 +41,7 @@ if (isset($_POST['username'], $_POST['password'])) {
         $_SESSION['user'] = $user;
         redirect('../../pages/profile.php');
     } else {
-      redirect('../../pages/loginForm.php');
+        redirect('../../pages/loginForm.php');
     }
 }
 // We should put this redirect in the end of this file since we always want to

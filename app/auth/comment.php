@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is created by me. Hello!
+ *
+ * (c) Opflip AB, Christopher Mattsson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
@@ -7,29 +16,28 @@ require __DIR__.'/../autoload.php';
 // Code inserts value of comment into comment-table
 
 if (isset($_POST['comment'])) {
-  $comment = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
+    $comment = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
 
-  $post_id = $_GET['id'];
-  $id = (int)$_SESSION['user']['id'];
-  $posttime = date("M d, Y: H:i");
+    $post_id = $_GET['id'];
+    $id = (int)$_SESSION['user']['id'];
+    $posttime = date("M d, Y: H:i");
 
 
-  $query = 'INSERT INTO comments (post_id, user_id, comment_text, posttime)
+    $query = 'INSERT INTO comments (post_id, user_id, comment_text, posttime)
   VALUES (:post_id, :user_id, :comment_text, :posttime)';
 
-  $statement = $pdo->prepare($query);
+    $statement = $pdo->prepare($query);
 
-  if (!$statement) {
-    die(var_dump($pdo->errorInfo()));
-  }
+    if (!$statement) {
+        die(var_dump($pdo->errorInfo()));
+    }
 
-  $statement->bindParam(':comment_text', $comment, PDO::PARAM_STR);
-  $statement->bindParam(':user_id', $id, PDO::PARAM_STR);
-  $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
-  $statement->bindParam(':posttime', $posttime, PDO::PARAM_STR);
+    $statement->bindParam(':comment_text', $comment, PDO::PARAM_STR);
+    $statement->bindParam(':user_id', $id, PDO::PARAM_STR);
+    $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+    $statement->bindParam(':posttime', $posttime, PDO::PARAM_STR);
 
-  $statement->execute();
+    $statement->execute();
 
-  redirect("../../pages/onePost.php?id=$post_id");
-
+    redirect("../../pages/onePost.php?id=$post_id");
 };

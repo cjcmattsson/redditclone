@@ -58,7 +58,7 @@
     <?php foreach ($users as $user): ?>
       <div class="col-lg-4 mb-3 rand-user">
         <a href="pages/user.php?id=<?php echo $user['id']?>" role="button">
-          <img class="rounded-circle feat-prof mb-3" src="<?php if(isset($user['img'])): ?>
+          <img class="rounded-circle feat-prof mb-3" src="<?php if (isset($user['img'])): ?>
             <?php echo "../images/".$user['img']; ?>
           <?php else: echo "../images/barack.jpg";?>
           <?php endif; ?>" alt="Generic placeholder image"></a>
@@ -77,7 +77,7 @@
     <div class="row featurette center-block all-posts-landing">
       <div class="col-md-6 mb-2">
         <div class="col-md-12 post-landing">
-          <img class="featurette-image img-fluid rand-post-img" src="<?php if(isset($post[0]['img'])): ?>
+          <img class="featurette-image img-fluid rand-post-img" src="<?php if (isset($post[0]['img'])): ?>
             <?php echo "../images/".$post[0]['img']; ?>
           <?php else: echo "../images/barack.jpg";?>
           <?php endif; ?>" alt="Generic placeholder image">
@@ -91,7 +91,7 @@
 
       <div class="col-md-6 mb-2">
         <div class="col-md-12 post-landing">
-          <img class="featurette-image img-fluid rand-post-img" src="<?php if(isset($post[1]['img'])): ?>
+          <img class="featurette-image img-fluid rand-post-img" src="<?php if (isset($post[1]['img'])): ?>
             <?php echo "../images/".$post[1]['img']; ?>
           <?php else: echo "../images/barack.jpg";?>
           <?php endif; ?>" alt="Generic placeholder image">

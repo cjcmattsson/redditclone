@@ -38,7 +38,7 @@
         <?php $infos = userInfo($pdo)?>
         <?php foreach ($infos as $info): ?>
           <a href="/pages/profile.php"><button class="btn profile-nav"><img class="navProfilePic"
-            src="<?php if(isset($info['img'])): ?>
+            src="<?php if (isset($info['img'])): ?>
             <?php echo "../images/".$info['img']; ?>
             <?php else: echo "../images/barack.jpg";?>
           <?php endif; ?>" alt="">

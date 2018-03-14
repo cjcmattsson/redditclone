@@ -17,7 +17,7 @@ $comments = comments($pdo);
 
         <a href="user.php?id=<?php echo $post['user_id'] ?>">
           <img class="profilePicPosts" src="
-          <?php if(isset($post['img'])): ?>
+          <?php if (isset($post['img'])): ?>
             <?php echo "../images/".$post['img']; ?>
           <?php else: echo "../images/barack.jpg";?>
 
@@ -68,7 +68,7 @@ $comments = comments($pdo);
 
                 <a href="user.php?id=<?php echo $comment['user_id'] ?>">
                   <img class="profilePicPostsComment" src="
-                  <?php if(isset($comment['img'])): ?>
+                  <?php if (isset($comment['img'])): ?>
                     <?php echo "../images/".$comment['img']; ?>
                   <?php else: echo "../images/barack.jpg";?>
 
