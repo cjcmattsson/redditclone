@@ -1,6 +1,7 @@
 # OpFlip - Where opinions are flipped!
 ## Cyberlink-project
 ### End-of-year 2017 assignment @ YRGO Göteborg
+[![StyleCI](https://styleci.io/repos/113765077/shield?branch=master)](https://styleci.io/repos/113765077)
 
 <img src="https://media.giphy.com/media/3qaUhLknPw6NW/giphy.gif" alt="Angry man" width="100%">
 
